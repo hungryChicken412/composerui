@@ -1,0 +1,735 @@
+{
+	"components": [
+		{
+			"Id": "209",
+			"Component": "PremiumTextField",
+			"Category": "Inputs",
+			"Description": "An advanced text field with floating label, adornments, and error animations.",
+			"PreviewImage": "/placeholder.png",
+			"images": ["/placeholder.png", "/placeholder2.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:PremiumTextField.kt]\n\n  package {$LabelText_01} com.composerUI.library.components\n\nimport androidx.compose.animation.animateColorAsState\n// ... (Your escaped Kotlin code goes here)",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"Variant_01": {
+								"Label": "Text Field Variant",
+								"Description": "Choose the visual background style of the text field.",
+								"DefaultValue": "outlined",
+								"Options": [
+									"outlined",
+									"soft",
+									"filled",
+									"default"
+								],
+								"Mapping": "{$Variant_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"Adornment_01": {
+								"Label": "Adornment",
+								"Description": "Select the icon or functional toggle to display inside the input.",
+								"DefaultValue": "password",
+								"Options": ["standard", "email", "password"],
+								"Mapping": "{$Adornment_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"LabelText_01": {
+								"Label": "Label Text",
+								"Description": "The text displayed as the placeholder and floating label.",
+								"DefaultValue": "Password",
+								"Mapping": "{$LabelText_01}",
+								"Type": "TextField"
+							},
+
+							"ThemeColor_01": {
+								"Label": "Theme Color",
+								"Description": "Choose the primary color for the active border and focused label.",
+								"DefaultValue": "#6200EE",
+								"Options": [
+									"#6200EE",
+									"#343434",
+									"#03DAC6",
+									"#FF5722",
+									"#E91E63"
+								],
+								"Mapping": "{$ThemeColor_01}",
+								"Type": "ColorField"
+							},
+							"CornerRadius_01": {
+								"Label": "Corner Radius",
+								"Description": "Adjust the roundness of the input field's corners.",
+								"DefaultValue": 8,
+								"Min": 0,
+								"Max": 28,
+								"Mapping": "{$CornerRadius_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "211",
+			"Component": "PremiumMorphingButton",
+			"Category": "Buttons",
+			"Description": "An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
+			"PreviewImage": "/morphing-btn-preview.png",
+			"images": ["/morphing-btn-preview.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"BgColor_01": {
+								"Label": "Background Color",
+								"Description": "Primary color of the button in Idle and Loading states.",
+								"DefaultValue": "#6200EE",
+								"Options": [
+									"#6200EE",
+									"#343434",
+									"#03DAC6",
+									"#FF5722"
+								],
+								"Mapping": "{$BgColor_01}",
+								"Type": "ColorField"
+							},
+							"SuccessColor_01": {
+								"Label": "Success Color",
+								"Description": "Color of the button when the Success state is triggered.",
+								"DefaultValue": "#4CAF50",
+								"Options": [
+									"#4CAF50",
+									"#8BC34A",
+									"#009688",
+									"#2196F3"
+								],
+								"Mapping": "{$SuccessColor_01}",
+								"Type": "ColorField"
+							},
+							"WidthIdle_01": {
+								"Label": "Idle Width (dp)",
+								"Description": "Width of the button in the default state.",
+								"DefaultValue": 200,
+								"Min": 100,
+								"Max": 300,
+								"Mapping": "{$WidthIdle_01}",
+								"Type": "SliderField"
+							},
+							"Text_01": {
+								"Label": "Button Text",
+								"Description": "The text displayed inside the button during the Idle state.",
+								"DefaultValue": "Submit",
+								"Mapping": "{$Text_01}",
+								"Type": "TextField"
+							},
+							"State_01": {
+								"Label": "Preview State",
+								"Description": "Toggle the component state to preview animations.",
+								"DefaultValue": "Idle",
+								"Options": ["Idle", "Loading", "Success"],
+								"Mapping": "{$State_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"WidthResolved_01": {
+								"Label": "Resolved Width (dp)",
+								"Description": "Width of the button during Loading/Success states.",
+								"DefaultValue": 56,
+								"Min": 40,
+								"Max": 100,
+								"Mapping": "{$WidthResolved_01}",
+								"Type": "SliderField"
+							},
+							"Height_01": {
+								"Label": "Height (dp)",
+								"Description": "Global height of the button.",
+								"DefaultValue": 56,
+								"Min": 40,
+								"Max": 80,
+								"Mapping": "{$Height_01}",
+								"Type": "SliderField"
+							},
+							"RadiusIdle_01": {
+								"Label": "Idle Corner Radius",
+								"Description": "Corner radius in the default state.",
+								"DefaultValue": 12,
+								"Min": 0,
+								"Max": 40,
+								"Mapping": "{$RadiusIdle_01}",
+								"Type": "SliderField"
+							},
+							"RadiusResolved_01": {
+								"Label": "Resolved Corner Radius",
+								"Description": "Corner radius when minimized to a circle/square.",
+								"DefaultValue": 28,
+								"Min": 0,
+								"Max": 50,
+								"Mapping": "{$RadiusResolved_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "212",
+			"Component": "SkeletonShimmer",
+			"Category": "Loading",
+			"Description": "A sweeping animated gradient placeholder used to indicate content is loading.",
+			"PreviewImage": "/skeleton-shimmer-preview.png",
+			"images": ["/skeleton-shimmer-preview.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:SkeletonShimmer.kt]\n\npackage com.composerUI.library.components\n\nimport androidx.compose.animation.core.*\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.layout.*\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.runtime.*\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.composed\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.geometry.Offset\nimport androidx.compose.ui.graphics.Brush\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.layout.onGloballyPositioned\nimport androidx.compose.ui.unit.Dp\nimport androidx.compose.ui.unit.IntSize\nimport androidx.compose.ui.unit.dp\n\nfun Modifier.shimmerEffect(\n    colors: List<Color> = listOf(\n        Color(android.graphics.Color.parseColor(\"{$BaseColor_01}\")),\n        Color(android.graphics.Color.parseColor(\"{$HighlightColor_01}\")),\n        Color(android.graphics.Color.parseColor(\"{$BaseColor_01}\")),\n    )\n): Modifier = composed {\n    var size by remember { mutableStateOf(IntSize.Zero) }\n    val transition = rememberInfiniteTransition(label = \"shimmer\")\n    val startOffsetX by transition.animateFloat(\n        initialValue = -2 * size.width.toFloat(),\n        targetValue = 2 * size.width.toFloat(),\n        animationSpec = infiniteRepeatable(\n            animation = tween(1000)\n        ),\n        label = \"shimmerOffsetX\"\n    )\n\n    background(\n        brush = Brush.linearGradient(\n            colors = colors,\n            start = Offset(startOffsetX, 0f),\n            end = Offset(startOffsetX + size.width.toFloat(), size.height.toFloat())\n        )\n    )\n    .onGloballyPositioned {\n        size = it.size\n    }\n}\n\n@Composable\nfun SkeletonShimmer(\n    modifier: Modifier = Modifier,\n    width: Dp = {$Width_01}.dp,\n    height: Dp = {$Height_01}.dp,\n    cornerRadius: Dp = {$CornerRadius_01}.dp\n) {\n    Box(\n        modifier = modifier\n            .width(width)\n            .height(height)\n            .clip(RoundedCornerShape(cornerRadius))\n            .shimmerEffect()\n    )\n}",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"LayoutVariant_01": {
+								"Label": "Preview Layout",
+								"Description": "Choose a layout to see how the skeleton behaves in context.",
+								"DefaultValue": "Single",
+								"Options": [
+									"Single",
+									"Article",
+									"Profile",
+									"Card"
+								],
+								"Mapping": "{$LayoutVariant_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"BaseColor_01": {
+								"Label": "Base Color",
+								"Description": "The static background color of the skeleton.",
+								"DefaultValue": "#E5E7EB",
+								"Options": [
+									"#E5E7EB",
+									"#374151",
+									"#F3E8FF",
+									"#FEF3C7"
+								],
+								"Mapping": "{$BaseColor_01}",
+								"Type": "ColorField"
+							},
+							"Height_01": {
+								"Label": "Height (dp)",
+								"Description": "The explicit height of a single skeleton block.",
+								"DefaultValue": 24,
+								"Min": 8,
+								"Max": 200,
+								"Mapping": "{$Height_01}",
+								"Type": "SliderField"
+							},
+							"CornerRadius_01": {
+								"Label": "Corner Radius (dp)",
+								"Description": "Roundness of the skeleton block edges.",
+								"DefaultValue": 8,
+								"Min": 0,
+								"Max": 100,
+								"Mapping": "{$CornerRadius_01}",
+								"Type": "SliderField"
+							},
+							"Width_01": {
+								"Label": "Width (dp)",
+								"Description": "The explicit width of a single skeleton block.",
+								"DefaultValue": 250,
+								"Min": 50,
+								"Max": 400,
+								"Mapping": "{$Width_01}",
+								"Type": "SliderField"
+							},
+							"HighlightColor_01": {
+								"Label": "Highlight Color",
+								"Description": "The color of the sweeping shine effect.",
+								"DefaultValue": "#F9FAFB",
+								"Options": [
+									"#F9FAFB",
+									"#4B5563",
+									"#FFFFFF",
+									"#FDE68A"
+								],
+								"Mapping": "{$HighlightColor_01}",
+								"Type": "ColorField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "213",
+			"Component": "PremiumSwitch",
+			"Category": "Toggles",
+			"Description": "An animated premium switch with integrated icons for states like dark/light mode.",
+			"PreviewImage": "/premium-switch.png",
+			"images": ["/premium-switch.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:PremiumSwitch.kt]\n\npackage com.composerUI.library.components\n\nimport androidx.compose.animation.animateColorAsState\nimport androidx.compose.animation.core.animateDpAsState\nimport androidx.compose.animation.core.tween\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.interaction.MutableInteractionSource\nimport androidx.compose.foundation.layout.*\nimport androidx.compose.foundation.shape.CircleShape\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.DarkMode\nimport androidx.compose.material.icons.filled.LightMode\nimport androidx.compose.material3.Icon\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.getValue\nimport androidx.compose.runtime.remember\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.graphics.vector.ImageVector\nimport androidx.compose.ui.unit.Dp\nimport androidx.compose.ui.unit.dp\n\n@Composable\nfun PremiumSwitch(\n    checked: Boolean,\n    onCheckedChange: (Boolean) -> Unit,\n    modifier: Modifier = Modifier,\n    width: Dp = {$Width_01}.dp,\n    height: Dp = {$Height_01}.dp,\n    checkedColor: Color = Color(android.graphics.Color.parseColor(\"{$CheckedColor_01}\")),\n    uncheckedColor: Color = Color(android.graphics.Color.parseColor(\"{$UncheckedColor_01}\")),\n    thumbColor: Color = Color(android.graphics.Color.parseColor(\"{$ThumbColor_01}\")),\n    onIcon: ImageVector = Icons.Default.LightMode,\n    offIcon: ImageVector = Icons.Default.DarkMode\n) {\n    val interactionSource = remember { MutableInteractionSource() }\n    \n    val trackColor by animateColorAsState(\n        targetValue = if (checked) checkedColor else uncheckedColor,\n        animationSpec = tween(durationMillis = 300),\n        label = \"trackColor\"\n    )\n    \n    val thumbOffset by animateDpAsState(\n        targetValue = if (checked) width - height else 0.dp,\n        animationSpec = tween(durationMillis = 300),\n        label = \"thumbOffset\"\n    )\n\n    Box(\n        modifier = modifier\n            .width(width)\n            .height(height)\n            .clip(RoundedCornerShape(height / 2))\n            .background(trackColor)\n            .clickable(\n                interactionSource = interactionSource,\n                indication = null,\n                onClick = { onCheckedChange(!checked) }\n            ),\n        contentAlignment = Alignment.CenterStart\n    ) {\n        Row(\n            modifier = Modifier\n                .fillMaxSize()\n                .padding(horizontal = (height / 4)),\n            horizontalArrangement = Arrangement.SpaceBetween,\n            verticalAlignment = Alignment.CenterVertically\n        ) {\n            Icon(\n                imageVector = offIcon,\n                contentDescription = null,\n                modifier = Modifier.size(height * 0.5f),\n                tint = if (!checked) Color.Gray else Color.White.copy(alpha = 0.5f)\n            )\n            Icon(\n                imageVector = onIcon,\n                contentDescription = null,\n                modifier = Modifier.size(height * 0.5f),\n                tint = if (checked) Color.White else Color.Gray.copy(alpha = 0.5f)\n            )\n        }\n\n        Box(\n            modifier = Modifier\n                .offset(x = thumbOffset)\n                .size(height)\n                .padding(2.dp)\n                .clip(CircleShape)\n                .background(thumbColor),\n            contentAlignment = Alignment.Center\n        ) {\n            Icon(\n                imageVector = if (checked) onIcon else offIcon,\n                contentDescription = null,\n                modifier = Modifier.size(height * 0.6f),\n                tint = if (checked) checkedColor else Color.Gray\n            )\n        }\n    }\n}",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"CheckedColor_01": {
+								"Label": "Checked Color",
+								"Description": "Background color of the track when active.",
+								"DefaultValue": "#4B6CB7",
+								"Options": [
+									"#4B6CB7",
+									"#4CAF50",
+									"#6200EE",
+									"#03DAC6"
+								],
+								"Mapping": "{$CheckedColor_01}",
+								"Type": "ColorField"
+							},
+							"UncheckedColor_01": {
+								"Label": "Unchecked Color",
+								"Description": "Background color of the track when inactive.",
+								"DefaultValue": "#E0E0E0",
+								"Options": [
+									"#E0E0E0",
+									"#9E9E9E",
+									"#BDBDBD",
+									"#424242"
+								],
+								"Mapping": "{$UncheckedColor_01}",
+								"Type": "ColorField"
+							},
+							"ThumbColor_01": {
+								"Label": "Thumb Color",
+								"Description": "Color of the sliding circular indicator.",
+								"DefaultValue": "#FFFFFF",
+								"Options": [
+									"#FFFFFF",
+									"#F5F5F5",
+									"#E0E0E0",
+									"#FFEB3B"
+								],
+								"Mapping": "{$ThumbColor_01}",
+								"Type": "ColorField"
+							},
+							"Width_01": {
+								"Label": "Width (dp)",
+								"Description": "Total width of the switch track.",
+								"DefaultValue": 64,
+								"Min": 40,
+								"Max": 100,
+								"Mapping": "{$Width_01}",
+								"Type": "SliderField"
+							},
+							"Height_01": {
+								"Label": "Height (dp)",
+								"Description": "Total height of the switch track.",
+								"DefaultValue": 32,
+								"Min": 20,
+								"Max": 60,
+								"Mapping": "{$Height_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "214",
+			"Component": "PremiumAccordian",
+			"Category": "Data Display",
+			"Description": "An animated, customizable accordion component that smoothly expands and collapses its content.",
+			"PreviewImage": "/premium-accordion.png",
+			"images": ["/premium-accordion.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:PremiumAccordion.kt]\n\npackage com.composerUI.library.components\n\nimport androidx.compose.animation.animateContentSize\nimport androidx.compose.animation.core.animateFloatAsState\nimport androidx.compose.animation.core.tween\nimport androidx.compose.foundation.clickable\nimport androidx.compose.foundation.layout.*\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.KeyboardArrowDown\nimport androidx.compose.material3.*\nimport androidx.compose.runtime.*\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.draw.rotate\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.unit.Dp\nimport androidx.compose.ui.unit.dp\n\n@Composable\nfun PremiumAccordion(\n    title: String,\n    modifier: Modifier = Modifier,\n    expanded: Boolean = false,\n    onExpandChange: (Boolean) -> Unit = {},\n    cornerRadius: Dp = {$CornerRadius_01}.dp,\n    containerColor: Color = Color(android.graphics.Color.parseColor(\"{$ContainerColor_01}\")),\n    content: @Composable () -> Unit\n) {\n    val rotationState by animateFloatAsState(\n        targetValue = if (expanded) 180f else 0f,\n        label = \"rotation\"\n    )\n\n    Surface(\n        modifier = modifier\n            .fillMaxWidth()\n            .clip(RoundedCornerShape(cornerRadius))\n            .clickable { onExpandChange(!expanded) }\n            .animateContentSize(\n                animationSpec = tween(durationMillis = 300)\n            ),\n        color = containerColor,\n        shape = RoundedCornerShape(cornerRadius),\n        border = AssistChipDefaults.assistChipBorder(enabled = true, borderColor = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))\n    ) {\n        Column(\n            modifier = Modifier\n                .fillMaxWidth()\n                .padding(16.dp)\n        ) {\n            Row(\n                modifier = Modifier.fillMaxWidth(),\n                verticalAlignment = Alignment.CenterVertically,\n                horizontalArrangement = Arrangement.SpaceBetween\n            ) {\n                Text(\n                    text = title,\n                    style = MaterialTheme.typography.titleMedium,\n                    color = MaterialTheme.colorScheme.onSurfaceVariant\n                )\n                Icon(\n                    imageVector = Icons.Default.KeyboardArrowDown,\n                    contentDescription = if (expanded) \"Collapse\" else \"Expand\",\n                    modifier = Modifier.rotate(rotationState),\n                    tint = MaterialTheme.colorScheme.onSurfaceVariant\n                )\n            }\n\n            if (expanded) {\n                Spacer(modifier = Modifier.height(12.dp))\n                Box(modifier = Modifier.fillMaxWidth()) {\n                    content()\n                }\n            }\n        }\n    }\n}",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"ExpandedState_01": {
+								"Label": "Preview State",
+								"Description": "Toggle the initial state of the accordion.",
+								"DefaultValue": "Collapsed",
+								"Options": ["Expanded", "Collapsed"],
+								"Mapping": "{$ExpandedState_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"TitleText_01": {
+								"Label": "Accordion Title",
+								"Description": "The main text displayed on the collapsed accordion.",
+								"DefaultValue": "CompuseUI",
+								"Mapping": "{$TitleText_01}",
+								"Type": "TextField"
+							},
+							"ContentText_01": {
+								"Label": "Content Text",
+								"Description": "The text displayed inside the expanded area.",
+								"DefaultValue": "Compose Ui is best.",
+								"Mapping": "{$ContentText_01}",
+								"Type": "TextField"
+							},
+							"ContainerColor_01": {
+								"Label": "Container Color",
+								"Description": "Background color of the accordion surface.",
+								"DefaultValue": "#F3F4F6",
+								"Options": [
+									"#F3F4F6",
+									"#FFFFFF",
+									"#E0E7FF",
+									"#FEF3C7"
+								],
+								"Mapping": "{$ContainerColor_01}",
+								"Type": "ColorField"
+							},
+							"CornerRadius_01": {
+								"Label": "Corner Radius (dp)",
+								"Description": "Adjust the roundness of the accordion's edges.",
+								"DefaultValue": 12,
+								"Min": 0,
+								"Max": 32,
+								"Mapping": "{$CornerRadius_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "215",
+			"Component": "PremiumSegmentedControl",
+			"Category": "Toggles",
+			"Description": "An iOS-style segmented control that smoothly slides an active indicator between options.",
+			"PreviewImage": "/segmented-control.png",
+			"images": ["/segmented-control.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "// [Kotlin code remains exactly the same as the previous version]",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"SegmentCount_01": {
+								"Label": "Number of Segments",
+								"DefaultValue": 3,
+								"Min": 2,
+								"Max": 5,
+								"Mapping": "{$SegmentCount_01}",
+								"Type": "SliderField"
+							},
+							"Label1_01": {
+								"Label": "Segment 1 Label",
+								"DefaultValue": "Preview",
+								"Mapping": "{$Label1_01}",
+								"Type": "TextField"
+							},
+							"Icon1_01": {
+								"Label": "Segment 1 Icon",
+								"DefaultValue": "Eye",
+								"Mapping": "{$Icon1_01}",
+								"Type": "IconField"
+							},
+							"Label2_01": {
+								"Label": "Segment 2 Label",
+								"DefaultValue": "Code",
+								"Mapping": "{$Label2_01}",
+								"Type": "TextField"
+							},
+							"Icon2_01": {
+								"Label": "Segment 2 Icon",
+								"DefaultValue": "Code",
+								"Mapping": "{$Icon2_01}",
+								"Type": "IconField"
+							},
+							"Label3_01": {
+								"Label": "Segment 3 Label",
+								"DefaultValue": "Split",
+								"Mapping": "{$Label3_01}",
+								"Type": "TextField"
+							},
+							"Icon3_01": {
+								"Label": "Segment 3 Icon",
+								"DefaultValue": "LayoutGrid",
+								"Mapping": "{$Icon3_01}",
+								"Type": "IconField"
+							},
+							"Label4_01": {
+								"Label": "Segment 4 Label",
+								"DefaultValue": "Settings",
+								"Mapping": "{$Label4_01}",
+								"Type": "TextField"
+							},
+							"Icon4_01": {
+								"Label": "Segment 4 Icon",
+								"DefaultValue": "Settings",
+								"Mapping": "{$Icon4_01}",
+								"Type": "IconField"
+							},
+
+							"TrackColor_01": {
+								"Label": "Track Color",
+								"DefaultValue": "#E5E7EB",
+								"Options": [
+									"#E5E7EB",
+									"#F3F4F6",
+									"#374151",
+									"#1F2937"
+								],
+								"Mapping": "{$TrackColor_01}",
+								"Type": "ColorField"
+							},
+							"PillColor_01": {
+								"Label": "Pill Color",
+								"DefaultValue": "#FFFFFF",
+								"Options": [
+									"#FFFFFF",
+									"#F9FAFB",
+									"#4B5563",
+									"#111827"
+								],
+								"Mapping": "{$PillColor_01}",
+								"Type": "ColorField"
+							},
+							"ActiveTextColor_01": {
+								"Label": "Active Text Color",
+								"DefaultValue": "#6200EE",
+								"Options": [
+									"#6200EE",
+									"#111827",
+									"#FFFFFF",
+									"#3B82F6"
+								],
+								"Mapping": "{$ActiveTextColor_01}",
+								"Type": "ColorField"
+							},
+							"InactiveTextColor_01": {
+								"Label": "Inactive Text Color",
+								"DefaultValue": "#6B7280",
+								"Options": [
+									"#6B7280",
+									"#9CA3AF",
+									"#D1D5DB",
+									"#4B5563"
+								],
+								"Mapping": "{$InactiveTextColor_01}",
+								"Type": "ColorField"
+							},
+							"Height_01": {
+								"Label": "Height (dp)",
+								"DefaultValue": 48,
+								"Min": 36,
+								"Max": 72,
+								"Mapping": "{$Height_01}",
+								"Type": "SliderField"
+							},
+							"CornerRadius_01": {
+								"Label": "Corner Radius (dp)",
+								"DefaultValue": 12,
+								"Min": 0,
+								"Max": 36,
+								"Mapping": "{$CornerRadius_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"Id": "216",
+			"Component": "PremiumAnimatedSteps",
+			"Category": "Navigation",
+			"Description": "An animated progress tracker supporting both horizontal and vertical orientations.",
+			"PreviewImage": "/animated-step-indicator.png",
+			"images": ["/animated-step-indicator.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:AnimatedStepIndicator.kt]\n\npackage com.composerUI.library.components.complex\n\nimport androidx.compose.animation.animateColorAsState\nimport androidx.compose.animation.core.animateFloatAsState\nimport androidx.compose.animation.core.tween\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.border\nimport androidx.compose.foundation.layout.*\nimport androidx.compose.foundation.shape.CircleShape\nimport androidx.compose.material.icons.Icons\nimport androidx.compose.material.icons.filled.Check\nimport androidx.compose.material3.Icon\nimport androidx.compose.material3.MaterialTheme\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.getValue\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.text.font.FontWeight\nimport androidx.compose.ui.unit.dp\n\nenum class StepperOrientation { Horizontal, Vertical }\n\n@Composable\nfun AnimatedStepIndicator(\n    currentStep: Int = {$CurrentStep_01},\n    totalSteps: Int = {$TotalSteps_01},\n    modifier: Modifier = Modifier,\n    stepLabels: List<String> = listOf(\"{$Label1_01}\", \"{$Label2_01}\", \"{$Label3_01}\", \"{$Label4_01}\", \"{$Label5_01}\"),\n    orientation: StepperOrientation = StepperOrientation.valueOf(\"{$Orientation_01}\"),\n    activeColor: Color = Color(android.graphics.Color.parseColor(\"{$ActiveColor_01}\")),\n    inactiveColor: Color = Color(android.graphics.Color.parseColor(\"{$InactiveColor_01}\")),\n    completedColor: Color = Color(android.graphics.Color.parseColor(\"{$CompletedColor_01}\"))\n) {\n    if (orientation == StepperOrientation.Horizontal) {\n        Row(\n            modifier = modifier.fillMaxWidth(),\n            verticalAlignment = Alignment.CenterVertically\n        ) {\n            for (i in 0 until totalSteps) {\n                StepItem(\n                    index = i,\n                    currentStep = currentStep,\n                    totalSteps = totalSteps,\n                    label = stepLabels.getOrNull(i),\n                    orientation = orientation,\n                    activeColor = activeColor,\n                    inactiveColor = inactiveColor,\n                    completedColor = completedColor,\n                    modifier = Modifier.weight(1f, fill = i != totalSteps - 1)\n                )\n            }\n        }\n    } else {\n        Column(\n            modifier = modifier.fillMaxHeight(),\n            horizontalAlignment = Alignment.Start\n        ) {\n            for (i in 0 until totalSteps) {\n                StepItem(\n                    index = i,\n                    currentStep = currentStep,\n                    totalSteps = totalSteps,\n                    label = stepLabels.getOrNull(i),\n                    orientation = orientation,\n                    activeColor = activeColor,\n                    inactiveColor = inactiveColor,\n                    completedColor = completedColor\n                )\n            }\n        }\n    }\n}\n\n@Composable\nprivate fun StepItem(\n    index: Int,\n    currentStep: Int,\n    totalSteps: Int,\n    label: String?,\n    orientation: StepperOrientation,\n    activeColor: Color,\n    inactiveColor: Color,\n    completedColor: Color,\n    modifier: Modifier = Modifier\n) {\n    val isCompleted = index < currentStep\n    val isActive = index == currentStep\n    \n    val circleColor by animateColorAsState(\n        targetValue = when {\n            isCompleted -> completedColor\n            isActive -> activeColor\n            else -> inactiveColor\n        },\n        label = \"circleColor\"\n    )\n\n    if (orientation == StepperOrientation.Horizontal) {\n        Row(\n            verticalAlignment = Alignment.CenterVertically,\n            modifier = modifier\n        ) {\n            StepCircle(circleColor, index + 1, isCompleted)\n\n            if (index < totalSteps - 1) {\n                val progress by animateFloatAsState(\n                    targetValue = if (index < currentStep) 1f else 0f,\n                    animationSpec = tween(500),\n                    label = \"lineProgress\"\n                )\n                \n                Box(\n                    modifier = Modifier\n                        .weight(1f)\n                        .height(4.dp)\n                        .padding(horizontal = 4.dp)\n                        .background(inactiveColor, CircleShape)\n                ) {\n                    Box(\n                        modifier = Modifier\n                            .fillMaxWidth(progress)\n                            .fillMaxHeight()\n                            .background(if (index < currentStep) completedColor else activeColor, CircleShape)\n                    )\n                }\n            }\n        }\n    } else {\n        Row(modifier = Modifier.padding(bottom = 8.dp)) {\n            Column(\n                horizontalAlignment = Alignment.CenterHorizontally,\n                modifier = Modifier.width(32.dp)\n            ) {\n                StepCircle(circleColor, index + 1, isCompleted)\n                \n                if (index < totalSteps - 1) {\n                    val progress by animateFloatAsState(\n                        targetValue = if (index < currentStep) 1f else 0f,\n                        animationSpec = tween(500),\n                        label = \"lineProgressVertical\"\n                    )\n                    Box(\n                        modifier = Modifier\n                            .width(4.dp)\n                            .height(40.dp)\n                            .padding(vertical = 4.dp)\n                            .background(inactiveColor, CircleShape)\n                    ) {\n                        Box(\n                            modifier = Modifier\n                                .fillMaxWidth()\n                                .fillMaxHeight(progress)\n                                .background(if (index < currentStep) completedColor else activeColor, CircleShape)\n                        )\n                    }\n                }\n            }\n            \n            if (label != null) {\n                Column(modifier = Modifier.padding(start = 12.dp, top = 4.dp)) {\n                    Text(\n                        text = label,\n                        style = MaterialTheme.typography.bodyLarge,\n                        fontWeight = if (isActive) FontWeight.Bold else FontWeight.Medium,\n                        color = if (isActive) activeColor else MaterialTheme.colorScheme.onSurface\n                    )\n                }\n            }\n        }\n    }\n}\n\n@Composable\nprivate fun StepCircle(color: Color, stepNumber: Int, isCompleted: Boolean) {\n    Box(\n        modifier = Modifier\n            .size(32.dp)\n            .clip(CircleShape)\n            .background(color)\n            .border(2.dp, color.copy(alpha = 0.5f), CircleShape),\n        contentAlignment = Alignment.Center\n    ) {\n        if (isCompleted) {\n            Icon(\n                imageVector = Icons.Default.Check,\n                contentDescription = null,\n                tint = Color.White,\n                modifier = Modifier.size(20.dp)\n            )\n        } else {\n            Text(\n                text = stepNumber.toString(),\n                color = Color.White,\n                style = MaterialTheme.typography.labelLarge,\n                fontWeight = FontWeight.Bold\n            )\n        }\n    }\n}",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"Orientation_01": {
+								"Label": "Orientation",
+								"Description": "Choose the layout direction of the stepper.",
+								"DefaultValue": "Horizontal",
+								"Options": ["Horizontal", "Vertical"],
+								"Mapping": "{$Orientation_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"TotalSteps_01": {
+								"Label": "Total Steps",
+								"Description": "Set the maximum number of steps.",
+								"DefaultValue": 4,
+								"Min": 2,
+								"Max": 5,
+								"Mapping": "{$TotalSteps_01}",
+								"Type": "SliderField"
+							},
+							"CurrentStep_01": {
+								"Label": "Current Step (Preview)",
+								"Description": "Adjust to preview the animation and active states.",
+								"DefaultValue": 1,
+								"Min": 0,
+								"Max": 5,
+								"Mapping": "{$CurrentStep_01}",
+								"Type": "SliderField"
+							},
+							"ActiveColor_01": {
+								"Label": "Active Color",
+								"Description": "Color of the current step.",
+								"DefaultValue": "#6200EE",
+								"Options": [
+									"#6200EE",
+									"#111827",
+									"#3B82F6",
+									"#E91E63"
+								],
+								"Mapping": "{$ActiveColor_01}",
+								"Type": "ColorField"
+							},
+							"CompletedColor_01": {
+								"Label": "Completed Color",
+								"Description": "Color of finished steps and checkmarks.",
+								"DefaultValue": "#4CAF50",
+								"Options": [
+									"#4CAF50",
+									"#10B981",
+									"#6200EE",
+									"#000000"
+								],
+								"Mapping": "{$CompletedColor_01}",
+								"Type": "ColorField"
+							},
+							"InactiveColor_01": {
+								"Label": "Inactive Color",
+								"Description": "Color of upcoming unvisited steps.",
+								"DefaultValue": "#E5E7EB",
+								"Options": [
+									"#E5E7EB",
+									"#D1D5DB",
+									"#9CA3AF",
+									"#F3F4F6"
+								],
+								"Mapping": "{$InactiveColor_01}",
+								"Type": "ColorField"
+							},
+							"Label1_01": {
+								"Label": "Step 1 Label",
+								"DefaultValue": "Personal",
+								"Mapping": "{$Label1_01}",
+								"Type": "TextField"
+							},
+							"Label2_01": {
+								"Label": "Step 2 Label",
+								"DefaultValue": "Address",
+								"Mapping": "{$Label2_01}",
+								"Type": "TextField"
+							},
+							"Label3_01": {
+								"Label": "Step 3 Label",
+								"DefaultValue": "Payment",
+								"Mapping": "{$Label3_01}",
+								"Type": "TextField"
+							},
+							"Label4_01": {
+								"Label": "Step 4 Label",
+								"DefaultValue": "Confirm",
+								"Mapping": "{$Label4_01}",
+								"Type": "TextField"
+							},
+							"Label5_01": {
+								"Label": "Step 5 Label",
+								"DefaultValue": "Complete",
+								"Mapping": "{$Label5_01}",
+								"Type": "TextField"
+							}
+						}
+					}
+				}
+			}
+		},{
+			"Id": "217",
+			"Component": "PremiumOTP",
+			"Category": "Inputs",
+			"Description": "An animated OTP/PIN input field with dynamic focus borders and secure masking capabilities.",
+			"PreviewImage": "/otp-input-field.png",
+			"images": ["/otp-input-field.png"],
+			"Properties": {
+				"HTML": "",
+				"KOTLIN": "//[FILENAME:OtpInputField.kt]\n\npackage com.composerUI.library.components.complex\n\nimport androidx.compose.animation.animateColorAsState\nimport androidx.compose.foundation.background\nimport androidx.compose.foundation.border\nimport androidx.compose.foundation.layout.*\nimport androidx.compose.foundation.shape.RoundedCornerShape\nimport androidx.compose.foundation.text.BasicTextField\nimport androidx.compose.foundation.text.KeyboardOptions\nimport androidx.compose.material3.MaterialTheme\nimport androidx.compose.material3.Text\nimport androidx.compose.runtime.*\nimport androidx.compose.ui.Alignment\nimport androidx.compose.ui.Modifier\nimport androidx.compose.ui.draw.clip\nimport androidx.compose.ui.graphics.Color\nimport androidx.compose.ui.text.font.FontWeight\nimport androidx.compose.ui.text.input.KeyboardType\nimport androidx.compose.ui.text.style.TextAlign\nimport androidx.compose.ui.unit.Dp\nimport androidx.compose.ui.unit.dp\n\n@Composable\nfun OtpInputField(\n    otpText: String,\n    onOtpTextChange: (String, Boolean) -> Unit,\n    modifier: Modifier = Modifier,\n    otpCount: Int = {$OtpCount_01},\n    shouldMask: Boolean = \"{$MaskState_01}\" == \"Masked\",\n    boxWidth: Dp = {$BoxWidth_01}.dp,\n    boxHeight: Dp = {$BoxHeight_01}.dp,\n    cornerRadius: Dp = {$CornerRadius_01}.dp,\n    primaryColor: Color = Color(android.graphics.Color.parseColor(\"{$PrimaryColor_01}\")),\n    containerColor: Color = Color(android.graphics.Color.parseColor(\"{$ContainerColor_01}\"))\n) {\n    BasicTextField(\n        modifier = modifier,\n        value = otpText,\n        onValueChange = {\n            if (it.length <= otpCount) {\n                onOtpTextChange(it, it.length == otpCount)\n            }\n        },\n        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),\n        decorationBox = {\n            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {\n                repeat(otpCount) { index ->\n                    CharView(\n                        index = index,\n                        text = otpText,\n                        shouldMask = shouldMask,\n                        boxWidth = boxWidth,\n                        boxHeight = boxHeight,\n                        cornerRadius = cornerRadius,\n                        primaryColor = primaryColor,\n                        containerColor = containerColor\n                    )\n                }\n            }\n        }\n    )\n}\n\n@Composable\nprivate fun CharView(\n    index: Int,\n    text: String,\n    shouldMask: Boolean,\n    boxWidth: Dp,\n    boxHeight: Dp,\n    cornerRadius: Dp,\n    primaryColor: Color,\n    containerColor: Color\n) {\n    val isFocused = text.length == index\n    val char = when {\n        index >= text.length -> \"\"\n        shouldMask -> \"•\"\n        else -> text[index].toString()\n    }\n\n    val animatedBorderColor by animateColorAsState(\n        targetValue = if (isFocused) primaryColor else Color.Transparent,\n        label = \"borderColor\"\n    )\n\n    Box(\n        modifier = Modifier\n            .width(boxWidth)\n            .height(boxHeight)\n            .clip(RoundedCornerShape(cornerRadius))\n            .background(containerColor)\n            .border(\n                width = if (isFocused) 2.dp else 0.dp,\n                color = animatedBorderColor,\n                shape = RoundedCornerShape(cornerRadius)\n            ),\n        contentAlignment = Alignment.Center\n    ) {\n        Text(\n            text = char,\n            style = MaterialTheme.typography.headlineMedium,\n            fontWeight = FontWeight.Bold,\n            color = if (char.isEmpty()) Color.Gray else MaterialTheme.colorScheme.onSurface,\n            textAlign = TextAlign.Center\n        )\n    }\n}",
+				"JSONSchema": {
+					"Styling": {
+						"Fields": {
+							"OtpCount_01": {
+								"Label": "Number of Digits",
+								"Description": "The length of the OTP or PIN required.",
+								"DefaultValue": 4,
+								"Min": 4,
+								"Max": 8,
+								"Mapping": "{$OtpCount_01}",
+								"Type": "SliderField"
+							},
+							"MaskState_01": {
+								"Label": "Input Masking",
+								"Description": "Choose whether to show numbers or mask them (like a password).",
+								"DefaultValue": "Visible",
+								"Options": ["Visible", "Masked"],
+								"Mapping": "{$MaskState_01}",
+								"Type": "SegmentedSelectField"
+							},
+							"PrimaryColor_01": {
+								"Label": "Focus/Active Color",
+								"Description": "The border color that animates when a box is active.",
+								"DefaultValue": "#6200EE",
+								"Options": [
+									"#6200EE",
+									"#111827",
+									"#3B82F6",
+									"#4CAF50"
+								],
+								"Mapping": "{$PrimaryColor_01}",
+								"Type": "ColorField"
+							},
+							"ContainerColor_01": {
+								"Label": "Box Background Color",
+								"Description": "The resting color of the character boxes.",
+								"DefaultValue": "#F3F4F6",
+								"Options": [
+									"#F3F4F6",
+									"#E5E7EB",
+									"#FFFFFF",
+									"#1F2937"
+								],
+								"Mapping": "{$ContainerColor_01}",
+								"Type": "ColorField"
+							},
+							"BoxWidth_01": {
+								"Label": "Box Width (dp)",
+								"DefaultValue": 48,
+								"Min": 36,
+								"Max": 64,
+								"Mapping": "{$BoxWidth_01}",
+								"Type": "SliderField"
+							},
+							"BoxHeight_01": {
+								"Label": "Box Height (dp)",
+								"DefaultValue": 56,
+								"Min": 40,
+								"Max": 72,
+								"Mapping": "{$BoxHeight_01}",
+								"Type": "SliderField"
+							},
+							"CornerRadius_01": {
+								"Label": "Corner Radius (dp)",
+								"DefaultValue": 12,
+								"Min": 0,
+								"Max": 24,
+								"Mapping": "{$CornerRadius_01}",
+								"Type": "SliderField"
+							}
+						}
+					}
+				}
+			}
+		} 
+	]
+}

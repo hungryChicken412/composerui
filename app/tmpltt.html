@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Compose UI - Engineered for Beauty. Built for Composers.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#0d0096",
+                        "on-background": "#e5e1e4",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "outline-variant": "#464554",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface": "#131315",
+                        "secondary-fixed": "#f0dbff",
+                        "surface-container": "#201f22",
+                        "inverse-primary": "#494bd6",
+                        "on-primary-fixed": "#07006c",
+                        "on-primary": "#1000a9",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed": "#301400",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#8083ff",
+                        "surface-variant": "#353437",
+                        "surface-bright": "#39393b",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#452000",
+                        "primary-fixed": "#e1e0ff",
+                        "on-tertiary": "#4f2500",
+                        "on-secondary": "#490080",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-dim": "#131315",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb783",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary-container": "#d97721",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary": "#ddb7ff",
+                        "inverse-on-surface": "#313032",
+                        "outline": "#908fa0",
+                        "primary": "#c0c1ff",
+                        "on-surface": "#e5e1e4",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-secondary-container": "#d6a9ff",
+                        "surface-tint": "#c0c1ff",
+                        "surface-container-low": "#1c1b1d",
+                        "on-surface-variant": "#c7c4d7",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#2a2a2c",
+                        "tertiary-fixed": "#ffdcc5",
+                        "secondary-container": "#6f00be",
+                        "background": "#131315"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "sm": "8px",
+                        "container-max": "1280px",
+                        "md": "16px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "2xl": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "label-xs": [
+                            "Inter"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "Geist"
+                        ],
+                        "headline-md": [
+                            "Geist"
+                        ],
+                        "code-sm": [
+                            "JetBrains Mono"
+                        ],
+                        "headline-sm": [
+                            "Geist"
+                        ]
+                    },
+                    "fontSize": {
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-xs": [
+                            "12px",
+                            {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "code-sm": [
+                            "14px",
+                            {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0",
+                                "fontWeight": "450"
+                            }
+                        ],
+                        "headline-sm": [
+                            "24px",
+                            {
+                                "lineHeight": "1.3",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    },
+                    "animation": {
+                        "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                        "float": "float 6s ease-in-out infinite",
+                    },
+                    "keyframes": {
+                        fadeInUp: {
+                            "0%": { opacity: 0, transform: "translateY(20px)" },
+                            "100%": { opacity: 1, transform: "translateY(0)" }
+                        },
+                        float: {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-15px)" }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .code-block-bg {
+            background-color: rgba(14, 14, 16, 0.8);
+        }
+
+        .text-token-keyword {
+            color: #ddb7ff;
+        }
+
+        .text-token-function {
+            color: #c0c1ff;
+        }
+
+        .text-token-string {
+            color: #ffb783;
+        }
+
+        .text-token-comment {
+            color: #908fa0;
+        }
+
+        .text-token-punctuation {
+            color: #c7c4d7;
+        }
+
+        .text-token-property {
+            color: #d97721;
+        }
+
+        /* Subtle glow effects for dark mode */
+        .glow-primary {
+            box-shadow: 0 0 40px -10px rgba(192, 193, 255, 0.15);
+        }
+
+        .glow-secondary {
+            box-shadow: 0 0 40px -10px rgba(221, 183, 255, 0.1);
+        }
+
+        /* Hover glows for cards */
+        .card-hover-glow:hover {
+            box-shadow: 0 10px 40px -10px rgba(192, 193, 255, 0.2);
+            border-color: rgba(192, 193, 255, 0.4);
+            transform: translateY(-4px);
+        }
+
+        /* Staggered animation delays */
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface/40 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-2xl shadow-black/40">
+        <div class="max-w-container-max mx-auto px-lg flex justify-between items-center h-20">
+            <div class="flex items-center gap-sm">
+                <img alt="Compose UI Logo" class="h-8 w-8 object-contain rounded"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLtWcjijdMTHML3yk_QdJe-W1GeXg64MmsQbctpFR8z93T1L01kWq9Z3L4BDkv-wVHMJ3VweYT4ygbXD8CxEbMA3E6GVoYZkMpu9sudRjw01KfCp20Zq6Kw-c2CgZ6CT77o4jp3FXEuTb44IY4FOEmeCC92j5keOarL1OJghJT-aglWXvGgg7lg5wabsBmSDV1FFKy6-if_1wlLK9zuuavbiKH21z6D7q8Sg-ZeWPmpbuc3BtZrNTZEx2bqO" />
+                <span class="font-display-lg text-headline-sm font-bold tracking-tight text-on-surface">Compose
+                    UI</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-lg">
+                <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1"
+                    href="#">Components</a>
+                <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
+                    href="#">Documentation</a>
+                <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
+                    href="#">Showcase</a>
+            </nav>
+            <div class="flex items-center gap-sm">
+                <button aria-label="menu"
+                    class="md:hidden flex items-center justify-center p-2 text-on-surface-variant hover:text-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="menu">menu</span>
+                </button>
+                <button
+                    class="bg-primary text-on-primary font-body-md text-body-md px-4 py-2 rounded-lg hover:scale-95 duration-100 transition-transform shadow-[0_0_15px_rgba(192,193,255,0.4)] hover:shadow-[0_0_25px_rgba(192,193,255,0.6)]">Get
+                    Pro</button>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow w-full pt-2xl">
+        <!-- Hero Section -->
+        <section
+            class="w-full relative py-2xl md:py-[120px] flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-surface-container-lowest to-background">
+            <canvas class="absolute inset-0 w-full h-full z-0 pointer-events-auto opacity-60" id="wave-canvas"></canvas>
+            <div class="px-lg max-w-container-max mx-auto relative z-10 flex flex-col items-center">
+                <h1
+                    class="font-display-lg text-display-lg max-w-4xl text-on-surface tracking-tight mb-md opacity-0 animate-fade-in-up">
+                    Engineered for Beauty.<br /><span class="text-primary">Built for Composers.</span>
+                </h1>
+                <p
+                    class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-xl opacity-0 animate-fade-in-up delay-100">
+                    A designer-grade component architecture for Jetpack Compose. Craft premium Android experiences with
+                    re-usable, elegantly structured code.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-md mb-xl opacity-0 animate-fade-in-up delay-200">
+                    <div class="relative w-full sm:w-auto">
+                        <div
+                            class="absolute inset-0 bg-primary/40 blur-xl rounded-lg transition-all duration-300 group-hover:bg-primary/60">
+                        </div>
+                        <button
+                            class="relative bg-primary text-on-primary font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-primary-container hover:scale-105 transition-all duration-300 shadow-sm w-full sm:w-auto flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.6)] group">
+                            Explore Components
+                            <span
+                                class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                    <button
+                        class="bg-surface-container/60 backdrop-blur-md border border-outline-variant/50 text-on-surface font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-surface-container-high transition-colors w-full sm:w-auto">
+                        View Documentation
+                    </button>
+                </div>
+                <!-- Mobile Phone Mockup -->
+                <div
+                    class="relative z-10 w-[300px] h-[600px] bg-surface-container-low border-[8px] border-surface-container-highest rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col mt-xl glow-primary opacity-0 animate-fade-in-up delay-300 motion-safe:animate-[fadeInUp_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards,float_6s_ease-in-out_infinite_1s]">
+                    <!-- Phone Top Notch/Camera -->
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-surface-container-highest rounded-b-2xl z-20">
+                    </div>
+                    <!-- Phone Screen Content -->
+                    <div class="flex-1 bg-surface-container-lowest/40 backdrop-blur-xl overflow-y-auto pt-10 px-4">
+                        <!-- Status Bar Mock -->
+                        <div class="flex justify-between items-center px-4 py-2 mb-8 text-left">
+                            <span class="text-[12px] font-bold text-on-surface">9:41</span>
+                            <div class="flex gap-1.5">
+                                <span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+                                <span class="material-symbols-outlined text-[14px]">wifi</span>
+                                <span class="material-symbols-outlined text-[14px]">battery_full</span>
+                            </div>
+                        </div>
+                        <!-- The Notifications Component (In-App) -->
+                        <div
+                            class="bg-surface-container/60 backdrop-blur-md rounded-2xl border border-outline-variant/30 p-md flex flex-col gap-md shadow-lg text-left">
+                            <div class="flex flex-col gap-1 mb-2">
+                                <h4 class="font-headline-sm text-[20px] text-on-surface">Notifications</h4>
+                                <p class="font-body-md text-[14px] text-on-surface-variant">Manage your alert
+                                    preferences.</p>
+                            </div>
+                            <div class="flex items-center justify-between py-3 border-t border-outline-variant/20">
+                                <span class="font-body-md text-[14px] text-on-surface">Email Alerts</span>
+                                <div
+                                    class="w-10 h-5 bg-primary rounded-full relative cursor-pointer flex items-center shadow-[0_0_8px_rgba(192,193,255,0.3)]">
+                                    <div class="w-4 h-4 bg-on-primary rounded-full absolute right-[2px]"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <span class="font-body-md text-[14px] text-on-surface">Push Notifications</span>
+                                <div
+                                    class="w-10 h-5 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center border border-outline-variant/50">
+                                    <div class="w-4 h-4 bg-surface-container-lowest rounded-full absolute left-[2px]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <button
+                                    class="w-full bg-primary text-on-primary font-body-md text-[14px] py-2.5 rounded-xl hover:bg-primary-container transition-colors shadow-lg">Save
+                                    Preferences</button>
+                            </div>
+                        </div>
+                        <!-- Additional App UI Filler -->
+                        <div class="mt-6 space-y-4 opacity-40">
+                            <div class="h-20 bg-surface-container rounded-xl"></div>
+                            <div class="h-20 bg-surface-container rounded-xl"></div>
+                        </div>
+                    </div>
+                    <!-- Home Indicator -->
+                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-on-surface/20 rounded-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Grid Features Section -->
+        <section class="w-full px-lg max-w-container-max mx-auto py-xl">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg">
+                <!-- Bento 1: Large Feature -->
+                <div
+                    class="col-span-1 md:col-span-8 bg-surface-container/60 backdrop-blur-md rounded-xl border border-outline-variant/30 p-lg flex flex-col justify-between glow-primary relative overflow-hidden group transition-all duration-300 card-hover-glow">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <div class="z-10 mb-xl">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Designer-Grade Defaults</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                            Every component is meticulously crafted to meet modern design standards out-of-the-box. Soft
+                            shadows, fluid animations, and perfect typography.
+                        </p>
+                    </div>
+                    <!-- Visual Mock: Complex Card -->
+                    <div
+                        class="z-10 bg-surface/80 backdrop-blur-sm rounded-lg border border-outline-variant/50 p-md max-w-sm ml-auto shadow-2xl shadow-black/50 transform rotate-1 group-hover:rotate-0 transition-transform duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                                <span class="material-symbols-outlined">person</span>
+                            </div>
+                            <div>
+                                <p class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Alex
+                                    Rivera</p>
+                                <p class="font-label-xs text-label-xs text-on-surface-variant">2 mins ago</p>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Just pushed the new design
+                            system updates to the main branch. Let me know what you think!</p>
+                        <div class="flex gap-2">
+                            <button
+                                class="bg-surface-container-high text-on-surface font-label-xs text-label-xs px-3 py-1.5 rounded hover:bg-surface-container-highest transition-colors">Reply</button>
+                            <button
+                                class="bg-primary text-on-primary font-label-xs text-label-xs px-3 py-1.5 rounded hover:bg-primary-container transition-colors shadow-[0_0_10px_rgba(192,193,255,0.3)]">Approve</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bento 2: Small Feature (Top Right) -->
+                <div
+                    class="col-span-1 md:col-span-4 bg-surface-container/60 backdrop-blur-md rounded-xl border border-outline-variant/30 p-lg flex flex-col glow-secondary group transition-all duration-300 card-hover-glow">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Robust Architecture</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto">
+                        Not a black-box library. Take ownership of the code and adapt it to your specific architectural
+                        needs.
+                    </p>
+                    <!-- Visual Mock: Code Snippet Snippet -->
+                    <div
+                        class="mt-md bg-surface-container-lowest/80 backdrop-blur-sm rounded border border-outline-variant/50 p-sm font-code-sm text-code-sm text-outline-variant overflow-hidden group-hover:border-primary/50 transition-colors">
+                        <span class="text-token-keyword">val</span> spacing = LocalSpacing.current<br />
+                        <span class="text-token-function">Modifier</span>.<span
+                            class="text-token-function">padding</span>(spacing.md)
+                    </div>
+                </div>
+                <!-- Bento 3: Small Feature (Bottom Left) -->
+                <div
+                    class="col-span-1 md:col-span-4 bg-surface-container/60 backdrop-blur-md rounded-xl border border-outline-variant/30 p-lg flex flex-col group transition-all duration-300 card-hover-glow">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Dark Mode First</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto">
+                        Beautifully inverted color palettes and elevation overlays designed specifically for OLED
+                        displays.
+                    </p>
+                    <!-- Visual Mock: Theme Toggle -->
+                    <div
+                        class="mt-md flex items-center justify-between bg-surface/80 backdrop-blur-sm rounded-lg p-3 border border-outline-variant/50">
+                        <span class="font-body-md text-body-md text-on-surface">Dark Theme</span>
+                        <div
+                            class="w-10 h-5 bg-primary rounded-full relative flex items-center shadow-[0_0_8px_rgba(192,193,255,0.4)]">
+                            <div class="w-4 h-4 bg-on-primary rounded-full absolute right-[2px]"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bento 4: Medium Feature (Bottom Right) -->
+                <div
+                    class="col-span-1 md:col-span-8 bg-surface-container/60 backdrop-blur-md rounded-xl border border-outline-variant/30 p-lg flex flex-col md:flex-row items-center gap-lg group overflow-hidden relative transition-all duration-300 card-hover-glow">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tl from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <div class="flex-1 z-10">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Fluid Interactions</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Spring-based animations and carefully tuned physics for every state change.
+                        </p>
+                    </div>
+                    <!-- Visual Mock: Interactive Element -->
+                    <div
+                        class="z-10 bg-surface/80 backdrop-blur-sm rounded-xl border border-outline-variant/50 p-4 shadow-xl transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-48 h-2 bg-surface-container-high rounded-full overflow-hidden mb-2">
+                            <div class="w-2/3 h-full bg-secondary rounded-full shadow-[0_0_10px_rgba(221,183,255,0.5)]">
+                            </div>
+                        </div>
+                        <div class="flex justify-between font-label-xs text-label-xs text-on-surface-variant">
+                            <span>Progress</span>
+                            <span>66%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Component Showcase -->
+        <section class="w-full px-lg max-w-container-max mx-auto py-2xl">
+            <div class="flex flex-col mb-xl text-center md:text-left">
+                <h2 class="font-display-lg text-display-lg text-on-surface mb-2 tracking-tight">The IDE Experience</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">Preview components in a high-fidelity
+                    environment before integrating.</p>
+            </div>
+            <div
+                class="bg-surface-container-lowest/80 backdrop-blur-xl rounded-2xl border border-outline-variant/30 overflow-hidden shadow-2xl shadow-black/40">
+                <!-- Code Block -->
+                <div class="code-block-bg p-lg flex flex-col relative overflow-hidden group">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,theme(colors.primary/0.1),transparent_70%)] pointer-events-none">
+                    </div>
+                    <button aria-label="Copy Code"
+                        class="absolute top-4 right-4 text-outline-variant hover:text-on-primary transition-colors bg-surface-container-high/50 p-2 rounded-md opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-outline-variant/20 z-10">
+                        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+                    </button>
+                    <div class="flex items-center gap-2 mb-6 border-b border-outline-variant/20 pb-3 relative z-10">
+                        <div class="flex gap-1.5 mr-4">
+                            <div class="w-3 h-3 rounded-full bg-error/80 border border-error"></div>
+                            <div class="w-3 h-3 rounded-full bg-tertiary/80 border border-tertiary"></div>
+                            <div class="w-3 h-3 rounded-full bg-primary/80 border border-primary"></div>
+                        </div>
+                        <span
+                            class="font-code-sm text-code-sm text-on-surface-variant font-medium">NotificationCard.kt</span>
+                    </div>
+                    <pre
+                        class="font-code-sm text-code-sm overflow-x-auto text-on-surface m-0 leading-relaxed relative z-10"><code class="block">
+<span class="text-token-keyword">@Composable</span>
+<span class="text-token-keyword">fun</span> <span class="text-token-function">NotificationCard</span>() {
+    <span class="text-token-function">Card</span>(
+        modifier = Modifier.<span class="text-token-function">fillMaxWidth</span>(),
+        elevation = CardDefaults.<span class="text-token-function">cardElevation</span>(
+            defaultElevation = <span class="text-token-property">8.dp</span>
+        ),
+        colors = CardDefaults.<span class="text-token-function">cardColors</span>(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerLowest
+        ),
+        shape = RoundedCornerShape(<span class="text-token-property">16.dp</span>)
+    ) {
+        <span class="text-token-function">Column</span>(
+            modifier = Modifier.<span class="text-token-function">padding</span>(<span class="text-token-property">24.dp</span>)
+        ) {
+            <span class="text-token-function">Text</span>(
+                text = <span class="text-token-string">"Notifications"</span>,
+                style = MaterialTheme.typography.headlineSmall
+            )
+            <span class="text-token-function">Spacer</span>(modifier = Modifier.<span class="text-token-function">height</span>(<span class="text-token-property">8.dp</span>))
+            <span class="text-token-function">Text</span>(
+                text = <span class="text-token-string">"Manage your alert preferences."</span>,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            <span class="text-token-comment">// ... Sophisticated Switch Logic ...</span>
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest/80 backdrop-blur-lg w-full py-xl border-t border-outline-variant/50 mt-auto relative z-10">
+        <div class="max-w-container-max mx-auto px-lg flex flex-col md:flex-row justify-between items-center gap-md">
+            <div class="flex items-center gap-sm">
+                <img alt="Compose UI Logo" class="h-6 w-6 object-contain rounded opacity-80"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLtWcjijdMTHML3yk_QdJe-W1GeXg64MmsQbctpFR8z93T1L01kWq9Z3L4BDkv-wVHMJ3VweYT4ygbXD8CxEbMA3E6GVoYZkMpu9sudRjw01KfCp20Zq6Kw-c2CgZ6CT77o4jp3FXEuTb44IY4FOEmeCC92j5keOarL1OJghJT-aglWXvGgg7lg5wabsBmSDV1FFKy6-if_1wlLK9zuuavbiKH21z6D7q8Sg-ZeWPmpbuc3BtZrNTZEx2bqO" />
+                <span class="font-display-lg text-headline-sm font-bold text-on-surface">Compose UI</span>
+                <span class="font-body-md text-body-md text-on-surface-variant ml-2 opacity-80">© 2024 Compose UI. Built
+                    for architects.</span>
+            </div>
+            <div class="flex gap-md">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100"
+                    href="#">Github</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100"
+                    href="#">Discord</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100"
+                    href="#">Twitter</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100"
+                    href="#">Terms</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all opacity-80 hover:opacity-100"
+                    href="#">Privacy</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('wave-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let mouseX = 0;
+            let targetMouseX = 0;
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                canvas.addEventListener('mousemove', (e) => {
+                    const rect = canvas.getBoundingClientRect();
+                    targetMouseX = e.clientX - rect.left;
+                });
+
+                canvas.addEventListener('mouseleave', () => {
+                    targetMouseX = width / 2;
+                });
+                targetMouseX = width / 2;
+                mouseX = width / 2;
+            }
+
+
+            let time = 0;
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                if (!prefersReducedMotion) {
+                    mouseX += (targetMouseX - mouseX) * 0.05;
+                }
+
+                const mouseInfluence = (mouseX / width - 0.5) * 2; // -1 to 1
+
+                const waves = [
+                    { amplitude: height * 0.1, frequency: 0.001, speed: 0.005, color: 'rgba(192, 193, 255, 0.05)', offset: 0, mouseMult: 0.5 },
+                    { amplitude: height * 0.15, frequency: 0.0015, speed: 0.003, color: 'rgba(73, 75, 214, 0.08)', offset: 2, mouseMult: 1.0 },
+                    { amplitude: height * 0.08, frequency: 0.002, speed: 0.007, color: 'rgba(128, 131, 255, 0.06)', offset: 4, mouseMult: 1.5 }
+                ];
+
+                waves.forEach(wave => {
+                    ctx.beginPath();
+                    ctx.moveTo(0, height);
+                    for (let x = 0; x <= width; x += 20) {
+                        let yOffset = 0;
+                        if (!prefersReducedMotion) {
+                            yOffset = mouseInfluence * wave.mouseMult * (height * 0.05) * Math.sin(x * 0.001);
+                        }
+                        const y = height * 0.5 + Math.sin(x * wave.frequency + time * wave.speed + wave.offset) * wave.amplitude + yOffset;
+                        ctx.lineTo(x, y);
+                    }
+                    ctx.lineTo(width, height);
+                    ctx.lineTo(0, height);
+                    ctx.fillStyle = wave.color;
+                    ctx.fill();
+                });
+
+                if (!prefersReducedMotion) {
+                    time++;
+                    requestAnimationFrame(animate);
+                } else {
+                    time = 100; // Static pose
+                    requestAnimationFrame(() => { }); // Draw once
+                }
+            }
+            animate();
+        });
+    </script>
+</body>
+
+</html>
