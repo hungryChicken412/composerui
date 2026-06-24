@@ -74,6 +74,7 @@ export default function LandingPage() {
 					<h1
 						id="hero-heading"
 						className="font-display-lg text-display-lg max-w-4xl text-on-surface tracking-tight mb-md opacity-0 animate-fade-in-up"
+						style={{ fontWeight: "lighter" }}
 					>
 						Engineered for Beauty.
 						<br />
