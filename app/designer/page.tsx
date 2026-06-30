@@ -31,5 +31,5 @@ export default async function DesignerPag({
 	}
 
 	// 4. Pass the fetched data directly into your interactive client component
-	return <DesignerPage initialData={initialComponent} />;
+	return <DesignerPage key={itemID} initialData={initialComponent} />;
 }

@@ -5,8 +5,8 @@
 			"Component": "PremiumTextField",
 			"Category": "Inputs",
 			"Description": "An advanced text field with floating label, adornments, and error animations.",
-			"PreviewImage": "/placeholder.png",
-			"images": ["/placeholder.png", "/placeholder2.png"],
+			"PreviewImage": "images/text.gif",
+
 			"Properties": {
 				"HTML": "",
 				"KOTLIN": "//[FILENAME:PremiumTextField.kt]\n\n  package {$LabelText_01} com.composerUI.library.components\n\nimport androidx.compose.animation.animateColorAsState\n// ... (Your escaped Kotlin code goes here)",
@@ -75,7 +75,7 @@
 			"Component": "PremiumMorphingButton",
 			"Category": "Buttons",
 			"Description": "An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
-			"PreviewImage": "/morphing-btn-preview.png",
+			"PreviewImage": "images/text.gif",
 			"images": ["/morphing-btn-preview.png"],
 			"Properties": {
 				"HTML": "",
@@ -646,7 +646,8 @@
 					}
 				}
 			}
-		},{
+		},
+		{
 			"Id": "217",
 			"Component": "PremiumOTP",
 			"Category": "Inputs",
@@ -730,6 +731,6 @@
 					}
 				}
 			}
-		} 
+		}
 	]
 }

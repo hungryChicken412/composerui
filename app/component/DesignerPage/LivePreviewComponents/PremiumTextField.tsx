@@ -69,7 +69,7 @@ export default function PremiumTextField({
                 `}</style>
 
 			<div
-				className={`relative flex items-center min-h-[56px] rounded-[var(--radius)] transition-colors duration-200 box-border
+				className={`relative flex items-center min-h-[20px] h-[50px] rounded-[var(--radius)] transition-colors duration-200 box-border
                         ${variant === "soft" && !isFocused && !isError ? "" : ""}
                         ${variant === "filled" ? "bg-white/5" : ""}
                         ${variant === "outlined" ? "bg-transparent" : ""}
@@ -78,7 +78,7 @@ export default function PremiumTextField({
 					backgroundColor:
 						variant === "filled" ? themeColor : "transparent",
 					borderColor: themeColor,
-					borderWidth: variant === "soft" ? 0 : 2,
+					borderWidth: variant === "soft" ? 0 : 1,
 				}}
 			>
 				{/* Email Icon */}

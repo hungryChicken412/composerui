@@ -118,8 +118,8 @@ export default function LivePreview({
 						{children}
 					</div>
 				</div>
-				<div className="mt-xl mb-lg font-label-xs text-label-xs text-on-surface-variant tracking-widest uppercase opacity-50">
-					Live Compose Preview
+				<div className="mt-xl mb-lg font-label-xs text-label-xs text-on-surface-variant tracking-widest uppercase opacity-50 text-center">
+					Preview,  <br></br> actual results might slightly differ
 				</div>
 			</section>
 		</>

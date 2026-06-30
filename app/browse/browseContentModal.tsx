@@ -7,7 +7,7 @@ const MOCK_COMPONENTS = [
 		id: "209",
 		name: "Premium Text Field",
 		category: "Inputs",
-		imageUrl: "/placeholder.png",
+		imageUrl: "images/text.gif",
 		description:
 			"An advanced text field with floating label, adornments, and error animations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -103,27 +103,9 @@ export default async function browseContentModal({
 		const matchesCategory =
 			selectedCategory === "All Components" ||
 			comp.category === selectedCategory;
+		console.log(comp.imageUrl);
 		return matchesSearch && matchesCategory;
 	});
-
-	{
-		/* const [searchQuery, setSearchQuery] = useState("");
-	const [selectedCategory, setSelectedCategory] = useState("All Components");
-
-	const filteredComponents = useMemo(() => {
-		return MOCK_COMPONENTS.filter((comp) => {
-			const matchesSearch =
-				comp.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-				comp.description
-					.toLowerCase()
-					.includes(searchQuery.toLowerCase());
-			const matchesCategory =
-				selectedCategory === "All Components" ||
-				comp.category === selectedCategory;
-			return matchesSearch && matchesCategory;
-		});
-	}, [searchQuery, selectedCategory]); */
-	}
 
 	return (
 		<>
@@ -139,51 +121,7 @@ export default async function browseContentModal({
 						Discover pre-built, high-performance Jetpack Compose
 						components designed for modern technical interfaces.
 					</p>
-					{/* <div className="w-full max-w-2xl mt-4 relative search-focus glass-card rounded-full flex items-center px-6 py-4 transition-all duration-300">
-					<span className="material-symbols-outlined text-outline mr-4">
-						{" "}
-						<SearchIcon />{" "}
-					</span>
-					<input
-						className="bg-transparent border-none text-on-surface hero-outline font-body-md text-body-md w-full focus:outline-none focus:ring-0 p-0"
-						hero="Search components (e.g. 'Button', 'Card')..."
-						type="text"
-						value={searchQuery}
-						onChange={(e) => setSearchQuery(e.target.value)}
-					/>
-					<button className="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-colors border border-outline-variant/50 ml-2">
-						Cmd + K
-					</button>
-				</div><div className="w-full max-w-2xl mt-4 relative search-focus glass-card rounded-full flex items-center px-6 py-4 transition-all duration-300">
-					<span className="material-symbols-outlined text-outline mr-4">
-						{" "}
-						<SearchIcon />{" "}
-					</span>
-					<input
-						className="bg-transparent border-none text-on-surface hero-outline font-body-md text-body-md w-full focus:outline-none focus:ring-0 p-0"
-						hero="Search components (e.g. 'Button', 'Card')..."
-						type="text"
-						value={searchQuery}
-						onChange={(e) => setSearchQuery(e.target.value)}
-					/>
-					<button className="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-colors border border-outline-variant/50 ml-2">
-						Cmd + K
-					</button>
-				</div><div className="flex flex-wrap justify-center gap-3 mt-6">
-					{CATEGORIES.map((category) => (
-						<button
-							key={category}
-							onClick={() => setSelectedCategory(category)}
-							className={`px-4 py-2 rounded-full font-label-xs text-label-xs transition-colors ${
-								selectedCategory === category
-									? "bg-primary/20 border border-primary/50 text-primary"
-									: "glass-card hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/20"
-							}`}
-						>
-							{category}
-						</button>
-					))}
-				</div> */}
+
 					<SearchFilters
 						categories={CATEGORIES}
 						initialCategory={CATEGORIES[0]}
@@ -193,9 +131,7 @@ export default async function browseContentModal({
 
 				<hr style={{ borderColor: "rgb(255,255,255, 0.2)" }} />
 
-				{/* Search results in a bento grid */}
 				<InbuiltElementsList filteredComponents={filteredComponents} />
-				{/* End of search results bento grid */}
 			</main>
 		</>
 	);
