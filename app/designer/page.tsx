@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import DesignerPage from "./designerPage"; // Import your client component
 import DesignerPageNotFound from "./designerPageNotFound";
+import OnboardingDialogues from "../component/OnboardingDialogues";
 
 export default async function DesignerPag({
 	searchParams,
@@ -31,5 +32,10 @@ export default async function DesignerPag({
 	}
 
 	// 4. Pass the fetched data directly into your interactive client component
-	return <DesignerPage key={itemID} initialData={initialComponent} />;
+	return (
+		<>
+			<OnboardingDialogues/>
+			<DesignerPage key={itemID} initialData={initialComponent} />
+		</>
+	);
 }
