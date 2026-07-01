@@ -8,7 +8,7 @@ const MOCK_COMPONENTS = [
 		id: "209",
 		name: "Premium Text Field",
 		category: "Inputs",
-		imageUrl: "/images/text.webp",
+		imageUrl: "/images/text.gif",
 		description:
 			"An advanced text field with floating label, adornments, and error animations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -17,7 +17,7 @@ const MOCK_COMPONENTS = [
 		id: "211",
 		name: "Premium Morphing Button",
 		category: "Buttons",
-		imageUrl: "/images/morphingbutton.webp",
+		imageUrl: "/images/morphingbutton.gif",
 		description:
 			"An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -26,7 +26,7 @@ const MOCK_COMPONENTS = [
 		id: "212",
 		name: "Skeleton Shimmer",
 		category: "Loading",
-		imageUrl: "/images/skeletonshimmer.webp",
+		imageUrl: "/images/skeletonshimmer.gif",
 		description:
 			"A sweeping animated gradient placeholder used to indicate content is loading.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -35,7 +35,7 @@ const MOCK_COMPONENTS = [
 		id: "213",
 		name: "Premium Switch",
 		category: "Toggles",
-		imageUrl: "/images/toggle.webp",
+		imageUrl: "/images/toggle.gif",
 		description:
 			"An animated premium switch with integrated icons for states like dark/light mode.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -44,7 +44,7 @@ const MOCK_COMPONENTS = [
 		id: "214",
 		name: "Premium Accordion",
 		category: "Data Display",
-		imageUrl: "/images/premiumaccordian.webp",
+		imageUrl: "/images/premiumaccordian.gif",
 		description:
 			"An animated, customizable accordion component that smoothly expands and collapses its content.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -53,7 +53,7 @@ const MOCK_COMPONENTS = [
 		id: "215",
 		name: "Segmented Control",
 		category: "Toggles",
-		imageUrl: "/images/segmenteddisplay.webp",
+		imageUrl: "/images/segmenteddisplay.gif",
 		description:
 			"An iOS-style segmented control that smoothly slides an active indicator between options.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -62,7 +62,7 @@ const MOCK_COMPONENTS = [
 		id: "216",
 		name: "Premium Animated Steps",
 		category: "Navigation",
-		imageUrl: "/images/progress.webp",
+		imageUrl: "/images/progress.gif",
 		description:
 			"An animated progress tracker supporting both horizontal and vertical orientations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -71,7 +71,7 @@ const MOCK_COMPONENTS = [
 		id: "217",
 		name: "Animated OTP Input",
 		category: "Inputs",
-		imageUrl: "/images/otp.webp",
+		imageUrl: "/images/otp.gif",
 		description:
 			"An animated OTP/PIN input field with dynamic focus borders and secure masking capabilities.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
