@@ -12,17 +12,14 @@ import ShowCustomToast from "./CustomToast";
 
 function CodePreview({
 	kotlinFiles,
-	hotkeysProvider,
 }: {
 	kotlinFiles: { name: string; content: string }[];
-	hotkeysProvider: any;
 }) {
 	function copyCodeToClipboard() {
 		const codeToCopy = kotlinFiles[currentlyShowingFile]?.content || "";
 		ShowCustomToast({
-			 label: "Copied!",
-			   info:
-				"Your ready to deploy Kotlin Code was copied successfully!",
+			label: "Copied!",
+			info: "Your ready to deploy Kotlin Code was copied successfully!",
 		});
 		navigator.clipboard.writeText(codeToCopy).then(
 			() => {
