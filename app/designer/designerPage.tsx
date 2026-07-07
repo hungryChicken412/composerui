@@ -222,10 +222,7 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 					<LivePreview>
 						<ElementToDisplay defaultValues={defaultValues} />
 					</LivePreview>
-					<CodePreview
-						kotlinFiles={kotlinFiles}
-						hotkeysProvider={useHotkeys}
-					/>
+					<CodePreview kotlinFiles={kotlinFiles} />
 				</main>
 			</div>{" "}
 			{settingsModal && <SettingsModal toggleModal={toggleModal} />}
