@@ -131,7 +131,7 @@ export default function Mobile() {
 				>
 					<div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-surface-container-highest rounded-b-2xl z-20"></div>
 
-					<div className="flex-1 bg-surface-container-lowest/40 backdrop-blur-xl overflow-y-auto pt-10 px-4">
+					<div className="flex-1 bg-surface-container-lowest/40 backdrop-blur-xl overflow-y-hidden pt-10 px-4">
 						<div className="flex justify-between items-center px-4 py-2 mb-8 text-left">
 							<span className="text-[12px] font-bold text-on-surface">
 								9:41
