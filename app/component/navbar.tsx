@@ -25,7 +25,7 @@ export default function Navbar() {
 						<img
 							alt="Compose UI Logo"
 							className="h-8 w-8 object-contain rounded"
-							src="next.svg"
+							src="iconn.png"
 						/>
 						<span className="font-display-lg text-headline-sm font-bold tracking-tight text-on-surface">
 							ComposerUI
