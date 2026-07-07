@@ -26,11 +26,11 @@ export default function PremiumTextField({
 	const isFloating = isFocused || value.trim() !== "";
 	const isError = errorMessage.trim() !== "";
 	const inputType =
-		adornment === "password" && !passwordVisible
-			? "password"
-			: adornment === "email"
-				? "email"
-				: "text";
+		adornment === "Password" && !passwordVisible
+			? "Password"
+			: adornment === "Email"
+				? "Email"
+				: "Text";
 
 	// Trigger shake animation when an error is generated
 	useEffect(() => {
@@ -70,15 +70,15 @@ export default function PremiumTextField({
 
 			<div
 				className={`relative flex items-center min-h-[20px] h-[50px] rounded-[var(--radius)] transition-colors duration-200 box-border
-                        ${variant === "soft" && !isFocused && !isError ? "" : ""}
-                        ${variant === "filled" ? "bg-white/5" : ""}
-                        ${variant === "outlined" ? "bg-transparent" : ""}
+                        ${variant === "Soft" && !isFocused && !isError ? "" : ""}
+                        ${variant === "Filled" ? "bg-white/5" : ""}
+                        ${variant === "Outlined" ? "bg-transparent" : ""}
                     `}
 				style={{
 					backgroundColor:
-						variant === "filled" ? themeColor : "transparent",
+						variant === "Filled" ? themeColor : "transparent",
 					borderColor: themeColor,
-					borderWidth: variant === "soft" ? 0 : 1,
+					borderWidth: variant === "Soft" ? 0 : 1,
 				}}
 			>
 				{/* Email Icon */}
@@ -118,7 +118,7 @@ export default function PremiumTextField({
 				<fieldset
 					aria-hidden="true"
 					className={`absolute inset-[-5px_0_0_0] m-0 px-2 pointer-events-none rounded-[var(--radius)] transition-all duration-200
-                            ${(variant === "soft" || variant === "filled") && !isFocused && !isError ? "border-transparent" : "border border-white/20"}
+                            ${(variant === "Soft" || variant === "Filled") && !isFocused && !isError ? "border-transparent" : "border border-white/20"}
                             ${isFocused && !isError ? "border-2 border-[var(--theme)]" : ""}
                             ${isError ? "border-2 border-red-500" : ""}
                         `}

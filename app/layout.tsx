@@ -122,9 +122,9 @@ export default function RootLayout({
 			</head>
 			<body className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 				<div className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
-					<Navbar />
+					
 					<main className="flex-1">{children}</main>
-					<Footer />
+					
 					<ToastContainer />
 				</div>
 			</body>
