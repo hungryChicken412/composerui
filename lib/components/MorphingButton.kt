@@ -38,15 +38,15 @@ fun MorphingButton(
     onClick: () -> Unit,
     state: ButtonState,
     modifier: Modifier = Modifier,
-    backgroundColor: Color = MaterialTheme.colorScheme.primary,
-    successColor: Color = Color(0xFF4CAF50),
-    cornerRadius: Dp = 12.dp,
-    cornerRadiusResolved : Dp = 28.dp,
+    backgroundColor: Color = Color(android.graphics.Color.parseColor("{$BgColor_01}")),
+    successColor: Color = Color(android.graphics.Color.parseColor("{$SuccessColor_01}")),
+    cornerRadius: Dp = {$RadiusIdle_01}.dp,
+    cornerRadiusResolved : Dp = {$RadiusResolved_01}.dp,
 
-    text: String = "Submit",
-    buttonWidthResolved : Dp = 56.dp,
-    buttonWidthIdle : Dp = 200.dp,
-    buttonHeight: Dp = 56.dp
+    text: String = "{$Text_01}",
+    buttonWidthResolved : Dp = {$WidthResolved_01}.dp,
+    buttonWidthIdle : Dp = {$WidthIdle_01}.dp,
+    buttonHeight: Dp = {$Height_01}.dp
 ) {
     val buttonWidth by animateDpAsState(
         targetValue = if (state == ButtonState.Idle) buttonWidthIdle else buttonWidthResolved,

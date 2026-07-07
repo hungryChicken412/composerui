@@ -138,8 +138,10 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 			d[fieldKey] = value.toString();
 
 			setDefaultValues(d);
+			console.log(d);
 
 			let updatedKotlin = dataRef.current.Properties.KOTLIN;
+			console.log(updatedKotlin);
 
 			debounceTimer.current = setTimeout(() => {
 				updatedKotlin = updatedKotlin.replace(REGEX, (match: any) => {
@@ -147,9 +149,10 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 						defaultValues[match] !== undefined &&
 						match === fieldKey
 					) {
+						console.log(defaultValues[match], match);
 						return defaultValues[match];
 					} else {
-						return match;
+						return defaultValues[match];
 					}
 				});
 

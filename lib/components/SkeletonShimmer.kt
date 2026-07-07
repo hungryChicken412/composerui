@@ -57,9 +57,9 @@ fun Modifier.shimmerEffect(
 @Composable
 fun SkeletonShimmer(
     modifier: Modifier = Modifier,
-    width: Dp = 100.dp,
-    height: Dp = 20.dp,
-    cornerRadius: Dp = 4.dp
+    width: Dp = {$Width_01}.dp,
+    height: Dp = {$Height_01}.dp,
+    cornerRadius: {$CornerRadius_01} = 4.dp
 ) {
     Box(
         modifier = modifier

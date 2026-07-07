@@ -44,11 +44,11 @@ fun PremiumTextField(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
-    placeholder: String = "Enter details",
+    placeholder: String = "{$LabelText_01}",
     errorMessage: String? = null,
-    variant: TextFieldVariant = TextFieldVariant.Outlined,
-    adornment: TextFieldAdornment = TextFieldAdornment.Standard,
-    cornerRadius: Dp = 8.dp,
+    variant: TextFieldVariant = TextFieldVariant.{$Variant_01},
+    adornment: TextFieldAdornment = TextFieldAdornment.{$Adornment_01},
+    cornerRadius: Dp = {$CornerRadius_01}.dp,
     primaryColor: Color = MaterialTheme.colorScheme.primary,
     errorColor: Color = MaterialTheme.colorScheme.error
 ) {
