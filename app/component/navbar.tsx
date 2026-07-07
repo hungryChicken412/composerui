@@ -50,7 +50,7 @@ export default function Navbar() {
 
 					<div className="flex items-center gap-md">
 						<button className="hidden md:block bg-primary text-on-primary px-4 py-2 rounded-full font-label-xs text-label-xs hover:bg-primary-fixed transition-colors active:scale-95">
-							Join Waitlist
+							More Soon!
 						</button>
 						<button
 							onClick={handleChange}
@@ -103,7 +103,10 @@ export default function Navbar() {
 								className="block font-display-lg text-4xl my-[20px] font-light text-on-surface hover:text-primary transition-colors duration-200 py-2"
 							>
 								<div className="flex justify-between items-center">
-									<span className="font-display-lg text-display-lg  text-on-surface tracking-tighter" style={{fontWeight:"lighter"}}>
+									<span
+										className="font-display-lg text-display-lg  text-on-surface tracking-tighter"
+										style={{ fontWeight: "lighter" }}
+									>
 										{link.label}
 									</span>
 									{link.badge && (
