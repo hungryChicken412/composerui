@@ -3,6 +3,9 @@
 import { Smartphone, ZoomOut, ZoomIn } from "lucide-react";
 
 import { useState, useEffect, useRef } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
+import { toast } from "react-toastify";
+import ShowCustomToast, { CustomToast } from "./CustomToast";
 
 export default function LivePreview({
 	children,
@@ -16,10 +19,21 @@ export default function LivePreview({
 
 	const handleZoomIn = () => setZoom((prev) => Math.min(prev + 0.1, 2));
 	const handleZoomOut = () => setZoom((prev) => Math.max(prev - 0.1, 0.5));
-	const handleResetZoom = () => setZoom(1);
+	const handleResetZoom = () => {
+		setZoom(1);
+		ShowCustomToast({
+			label: "Recentered!",
+			info: "Recentered the preview!",
+		});
+	};
 
 	const containerRef = useRef<HTMLDivElement>(null);
 	const position = useRef({ x: 0, y: 0 });
+
+	useHotkeys("mod+V", (e) => {
+		e.preventDefault();
+		handleResetZoom();
+	});
 
 	useEffect(() => {
 		if (zoom <= 1) {
@@ -119,7 +133,7 @@ export default function LivePreview({
 					</div>
 				</div>
 				<div className="mt-xl mb-lg font-label-xs text-label-xs text-on-surface-variant tracking-widest uppercase opacity-50 text-center">
-					Preview,  <br></br> actual results might slightly differ
+					Preview, <br></br> actual results might slightly differ
 				</div>
 			</section>
 		</>

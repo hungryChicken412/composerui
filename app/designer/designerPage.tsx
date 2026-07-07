@@ -12,12 +12,15 @@ import TextField from "../component/Fields/TextField";
 import LivePreview from "../component/DesignerPage/livePreview";
 import CodePreview from "../component/DesignerPage/codePreview";
 import SideNav from "../component/DesignerPage/SideNavMenu/sideNav";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import React from "react";
 
 import TopMenu from "../component/DesignerPage/TopMenu";
 import dynamic from "next/dynamic";
 import SettingsModal from "../component/DesignerPage/SettingsModal";
+import { useRouter } from "next/navigation";
+import ShowCustomToast from "../component/DesignerPage/CustomToast";
 
 const PremadeHTMLMockups: any = {
 	PremiumTextField: dynamic(
@@ -101,6 +104,11 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 	// 2. A ref to prevent React "stale closures" inside our timeout
 	const dataRef = useRef(componentData);
 	useEffect(() => {
+		ShowCustomToast({
+			label: `${componentData.Component}!`,
+			info: `Loaded ${componentData.Component}!`,
+		});
+
 		dataRef.current = componentData;
 		let KOTLINCODE = initialData.Properties.KOTLIN;
 
@@ -184,6 +192,17 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 		setSettingsModal(!settingsModal);
 	}
 
+	const router = useRouter();
+
+	useHotkeys("mod+h", (e) => {
+		e.preventDefault();
+		toggleModal();
+	});
+	useHotkeys("mod+s", (e) => {
+		e.preventDefault();
+		router.push("/browse");
+	});
+
 	return (
 		<>
 			<TopMenu />
@@ -203,7 +222,10 @@ export default function DesignerPage({ initialData }: { initialData: any }) {
 					<LivePreview>
 						<ElementToDisplay defaultValues={defaultValues} />
 					</LivePreview>
-					<CodePreview kotlinFiles={kotlinFiles} />
+					<CodePreview
+						kotlinFiles={kotlinFiles}
+						hotkeysProvider={useHotkeys}
+					/>
 				</main>
 			</div>{" "}
 			{settingsModal && <SettingsModal toggleModal={toggleModal} />}

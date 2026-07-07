@@ -1,0 +1,30 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start server
+        run: |
+          npm run start &
+          npx wait-on http://localhost:3000
+      - name: Run Lighthouse CI (upload to temporary storage)
+        run: npx @lhci/cli@0.10.3 autorun --upload.target=temporary-public-storage
+      - name: Upload LHCI report link
+        if: success()
+        run: echo "Lighthouse CI completed; results uploaded to temporary-public-storage."

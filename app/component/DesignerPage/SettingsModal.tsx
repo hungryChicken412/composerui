@@ -225,13 +225,18 @@ export default function HelpModal({
 								shortcut={["⌘", "K"]}
 							/>
 							<ShortcutRow
-								label="Toggle Code Panel"
-								shortcut={["⌘", "\\"]}
+								label="Toggle Properties Panel"
+								shortcut={["⌘", "M"]}
 							/>
 							<ShortcutRow
-								label="Undo Action"
-								shortcut={["⌘", "Z"]}
+								label="Recenter Preview"
+								shortcut={["⌘", "V"]}
 							/>
+							<ShortcutRow
+								label="Press for Help"
+								shortcut={["⌘", "H"]}
+							/>
+
 							<ShortcutRow
 								label="Copy Code"
 								shortcut={["⌘", "C"]}

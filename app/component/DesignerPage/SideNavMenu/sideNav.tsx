@@ -12,12 +12,13 @@ import { useState } from "react";
 import React from "react";
 
 import SideMenuMain from "./SideMenuMain";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const TOP_NAV_ITEMS = [
 	{ icon: SlidersHorizontal, active: true, id: 1 },
-	{ icon: Layers, active: false, id: 2 },
+	/*{ icon: Layers, active: false, id: 2 },
 	{ icon: History, active: false, id: 3 },
-	{ icon: Folder, active: false, id: 4 },
+	{ icon: Folder, active: false, id: 4 }, */
 ];
 
 function SideNav({
@@ -30,6 +31,18 @@ function SideNav({
 	toggleModal: () => void;
 }) {
 	const [sidenavMenu, setsidenavMenu] = useState(1);
+
+	useHotkeys("mod+M", (e) => {
+		e.preventDefault();
+		if (sidenavMenu == 1) {
+			setsidenavMenu(9);
+		} else {
+			setsidenavMenu(1);
+		}
+		console.log(sidenavMenu);
+		
+	});
+
 
 	function toggleMenu(id: number) {
 		if (sidenavMenu == id) {
@@ -48,8 +61,8 @@ function SideNav({
 							key={idx}
 							className={
 								item.id == sidenavMenu
-									? "flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl w-12 h-12 mb-4 active:scale-90 duration-150 shadow-lg shadow-primary/20"
-									: "flex flex-col items-center justify-center text-on-surface-variant w-12 h-12 mb-4 hover:bg-surface-variant rounded-xl transition-all active:scale-90 duration-150 group"
+									? "flex flex-col items-center cursor-pointer justify-center bg-primary-container text-on-primary-container rounded-xl w-12 h-12 mb-4 active:scale-90 duration-150 shadow-lg shadow-primary/20"
+									: "flex flex-col items-center justify-center cursor-pointer text-on-surface-variant w-12 h-12 mb-4 hover:bg-surface-variant rounded-xl transition-all active:scale-90 duration-150 group"
 							}
 							onClick={() => toggleMenu(item.id)}
 						>
