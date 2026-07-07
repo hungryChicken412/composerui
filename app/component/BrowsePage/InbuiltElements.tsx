@@ -7,23 +7,21 @@ import { ArrowRight } from "lucide-react";
 
 export default function InbuiltElementsList({
 	filteredComponents,
-	
 }: {
 	filteredComponents: any[];
-	
 }) {
 	return (
 		<>
-			<section className="grid grid-cols-3 gap-8 mt-8">
+			<section className="grid  md:grid-cols-2 grid-cols-1  lg:grid-cols-3 gap-8 mt-8 ">
 				{filteredComponents.length > 0 ? (
 					filteredComponents.map((comp, index) => (
 						<div
 							key={comp.id}
-							className={`glass-card-luxury rounded-[24px] overflow-hidden flex flex-col group transition-all duration-500`}
+							className={`glass-card-luxury rounded-[24px] overflow-hidden flex flex-col group w-max-[400px] m-auto transition-all duration-500`}
 						>
 							<div className="h-64 image-glow-backdrop flex items-center justify-center p-8 border-b border-white/5 relative bg-surface-container-lowest/30">
 								{/* hero for visual preview */}
-								
+
 								<Image
 									src={comp.imageUrl}
 									alt={comp.name}
