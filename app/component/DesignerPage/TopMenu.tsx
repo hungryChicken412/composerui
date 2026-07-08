@@ -62,28 +62,22 @@ function TopMenu() {
 					</Link>
 				</nav>
 				<div className="flex items-center gap-3 pr-4 border-r border-outline-variant/30">
-					<Link
-						href="https://github.com"
+					<a
+						href="https://github.com/hungrychicken412/composerui"
 						target="_blank"
 						className="text-outline hover:text-on-surface transition-colors"
 					>
-						<Code />
-
-						<span className="sr-only">GitHub</span>
-					</Link>
-					<Link
-						href="https://twitter.com"
-						target="_blank"
-						className="text-outline hover:text-on-surface transition-colors"
-					>
-						<Code />
-						<span className="sr-only">Twitter</span>
-					</Link>
+						<Image
+							src="/logo-03.cc5e5332.svg"
+							alt="github"
+							style={{
+								filter: "invert()",
+							}}
+							height={32}
+							width={32}
+						/>
+					</a>
 				</div>
-
-				<button className="bg-on-surface text-surface-container-lowest hover:bg-on-surface/90 px-4 py-1.5 rounded-md text-sm font-semibold transition-colors">
-					Join Waitlist
-				</button>
 			</div>
 		</header>
 	);
