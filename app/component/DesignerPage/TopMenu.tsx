@@ -73,8 +73,8 @@ function TopMenu() {
 							style={{
 								filter: "invert()",
 							}}
-							height={32}
-							width={32}
+							height={28}
+							width={28}
 						/>
 					</a>
 				</div>
