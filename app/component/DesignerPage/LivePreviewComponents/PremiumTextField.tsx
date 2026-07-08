@@ -82,7 +82,7 @@ export default function PremiumTextField({
 				}}
 			>
 				{/* Email Icon */}
-				{adornment === "email" && (
+				{adornment === "Email" && (
 					<div className="ml-4 w-5 h-5 text-neutral-400 flex items-center justify-center z-20">
 						<svg viewBox="0 0 24 24" fill="currentColor">
 							<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -98,15 +98,15 @@ export default function PremiumTextField({
 					onFocus={() => setIsFocused(true)}
 					onBlur={() => setIsFocused(false)}
 					className={`flex-1 min-h-[56px] py-3.5 bg-transparent outline-none text-white text-base z-10 w-full
-                            ${adornment === "email" ? "pl-3" : "pl-4"}
-                            ${adornment === "password" ? "pr-3" : "pr-4"}
+                            ${adornment === "Email" ? "pl-3" : "pl-4"}
+                            ${adornment === "Password" ? "pr-3" : "pr-4"}
                         `}
 				/>
 
 				{/* Floating Label */}
 				<label
 					className={`absolute text-base pointer-events-none origin-top-left transition-all duration-200 z-20
-                            ${adornment === "email" ? "left-12" : "left-4"}
+                            ${adornment === "Email" ? "left-12" : "left-4"}
                             ${isFloating ? "-translate-y-6 scale-75" : "translate-y-0 scale-100"}
                             ${isError ? "text-red-500" : isFocused ? "text-[var(--theme)]" : "text-neutral-400"}
                         `}
@@ -125,7 +125,7 @@ export default function PremiumTextField({
 				>
 					<legend
 						className={`block w-auto h-[11px] text-[12px] invisible whitespace-nowrap transition-[max-width] duration-200 p-0
-                                ${adornment === "email" ? "ml-8" : ""}
+                                ${adornment === "Email" ? "ml-8" : ""}
                                 ${isFloating ? "max-w-full px-1" : "max-w-[0.01px]"}
                             `}
 					>
@@ -134,7 +134,7 @@ export default function PremiumTextField({
 				</fieldset>
 
 				{/* Password Toggle Button */}
-				{adornment === "password" && (
+				{adornment === "Password" && (
 					<button
 						type="button"
 						onClick={() => setPasswordVisible(!passwordVisible)}
