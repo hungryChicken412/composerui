@@ -9,8 +9,8 @@ export default function Navbar() {
 	const navLinks = [
 		{ href: "/browse", label: "Components" },
 		{ href: "/blocks", label: "Blocks", badge: "✨ New" },
-		{ href: "/documentation", label: "Documentation" },
-		{ href: "/templates", label: "Templates" },
+		{ href: "/#documentation", label: "Documentation", badge: "🕐 Soon" },
+		{ href: "/#templates", label: "Templates", badge: "🕐 Soon" },
 	];
 
 	function handleChange() {

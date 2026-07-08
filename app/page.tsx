@@ -103,9 +103,7 @@ export default function LandingPage() {
 								/>
 							</Link>
 						</div>
-						<button className="bg-surface-container/60 backdrop-blur-md border border-outline-variant/50 text-on-surface font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-surface-container-high transition-colors w-full sm:w-auto">
-							View Documentation
-						</button>
+						
 					</div>
 
 					{/* --- NEW: WORKFLOW PIPELINE FLOWCHART --- */}
