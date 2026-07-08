@@ -11,10 +11,10 @@ function TopMenu() {
 			<div className="flex items-center gap-6 w-[65%]">
 				<Link href="/" className="flex items-center gap-2 group">
 					<Image
-						src="/hero.png"
+						src="/iconn.ico"
 						alt="ComposerUI Logo"
-						height={24}
-						width={24}
+						height={32}
+						width={32}
 						className="group-hover:opacity-80 transition-opacity"
 					/>
 				</Link>

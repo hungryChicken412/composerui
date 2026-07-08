@@ -1,37 +1,10 @@
 "use client";
 
-import { useState, useEffect, SetStateAction, useRef } from "react";
-import {
-	LayoutGrid,
-	SlidersHorizontal,
-	Layers,
-	File,
-	History,
-	Folder,
-	Menu,
-} from "lucide-react";
-import TextField from "../component/Fields/TextField";
 import LivePreview from "../component/DesignerPage/livePreview";
 import CodePreview from "../component/DesignerPage/codePreview";
 import SideNav from "../component/DesignerPage/SideNavMenu/sideNav";
-import PremiumTextField from "../component/DesignerPage/LivePreviewComponents/PremiumTextField";
-import React from "react";
-import SegmentedSelectField from "../component/Fields/SegmentedSelectField";
-import TopMenu from "../component/DesignerPage/TopMenu";
 
-const TOP_NAV_ITEMS = [
-	{ icon: LayoutGrid, active: false },
-	{ icon: SlidersHorizontal, active: true },
-	{ icon: Layers, active: false },
-	{ icon: History, active: false },
-	{ icon: Folder, active: false },
-];
-const componentDictionary: Record<string, React.ReactNode> = {
-	TextField: <TextField />,
-	SegmentedSelectField: <SegmentedSelectField />,
-	ColorField: <TextField />,
-	SliderField: <TextField />,
-};
+import TopMenu from "../component/DesignerPage/TopMenu";
 
 const files = {
 	name: "MainActivity.kt",

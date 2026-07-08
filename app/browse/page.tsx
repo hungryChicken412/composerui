@@ -1,11 +1,11 @@
-import { ArrowRight, Loader2, Code } from "lucide-react";
-import SearchFilters from "../component/BrowsePage/SearchFilters";
-import Link from "next/link";
-import Image from "next/image";
-import { blurhashToBase64 } from "blurhash-base64";
-import InbuiltElementsList from "../component/BrowsePage/InbuiltElements";
 import Navbar from "../component/navbar";
 import BrowsePage from "./browseContent";
+export const metadata = {
+	title: "Composer UI | Browse Components ",
+	description:
+		"This library contains a set of premium hand picked components for Jetpack Compose",
+	openGraph: { images: ["/og-image.svg"] },
+};
 
 export default async function BrowsePageIndex({
 	searchParams,

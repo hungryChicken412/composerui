@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./component/footer";
-import Navbar from "./component/navbar";
+import NextTopLoader from "nextjs-toploader";
+
 import { ToastContainer } from "react-toastify";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://composerui.com";
@@ -102,7 +102,7 @@ export default function RootLayout({
 								url: SITE_URL,
 								potentialAction: {
 									"@type": "SearchAction",
-									target: `${SITE_URL}/search?q={search_term_string}`,
+									target: `${SITE_URL}/browse?q={search_term_string}`,
 									"query-input":
 										"required name=search_term_string",
 								},
@@ -122,10 +122,9 @@ export default function RootLayout({
 			</head>
 			<body className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 				<div className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
-					
 					<main className="flex-1">{children}</main>
-					
 					<ToastContainer />
+					<NextTopLoader />
 				</div>
 			</body>
 		</html>

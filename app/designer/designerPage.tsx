@@ -8,7 +8,6 @@ import {
 	useCallback,
 } from "react";
 
-import TextField from "../component/Fields/TextField";
 import LivePreview from "../component/DesignerPage/livePreview";
 import CodePreview from "../component/DesignerPage/codePreview";
 import SideNav from "../component/DesignerPage/SideNavMenu/sideNav";
@@ -27,7 +26,7 @@ const PremadeHTMLMockups: any = {
 		() =>
 			import("@/app/component/DesignerPage/LivePreviewComponents/PremiumTextField"),
 	),
-	PremiumMorphingButton: dynamic(
+	MorphingButton: dynamic(
 		() =>
 			import("@/app/component/DesignerPage/LivePreviewComponents/MorphingButtonPreview"),
 	),

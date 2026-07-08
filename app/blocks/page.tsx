@@ -1,9 +1,5 @@
-import { ArrowRight, Loader2, Code, Image as ImageIcon } from "lucide-react";
-import SearchFilters from "../component/BrowsePage/SearchFilters";
-import Link from "next/link";
-import Image from "next/image";
-import { blurhashToBase64 } from "blurhash-base64";
-import InbuiltElementsList from "../component/BrowsePage/InbuiltElements";
+import { ArrowRight, Image as ImageIcon } from "lucide-react";
+
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 

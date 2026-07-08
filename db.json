@@ -65,7 +65,7 @@
 		},
 		{
 			"Id": "211",
-			"Component": "PremiumMorphingButton",
+			"Component": "MorphingButton",
 			"Category": "Buttons",
 			"Description": "An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
 			"PreviewImage": "images/text.gif",

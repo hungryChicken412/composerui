@@ -3,7 +3,7 @@
 import { blurhashToBase64 } from "blurhash-base64";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, LucideClockFading } from "lucide-react";
 
 export default function InbuiltElementsList({
 	filteredComponents,
@@ -19,27 +19,39 @@ export default function InbuiltElementsList({
 							key={comp.id}
 							className={`glass-card-luxury rounded-[24px] overflow-hidden flex flex-col group w-max-[400px] m-auto transition-all duration-500`}
 						>
-							<div className="h-64 image-glow-backdrop flex items-center justify-center p-8 border-b border-white/5 relative bg-surface-container-lowest/30">
+							<div
+								className="h-64 image-glow-backdrop flex items-center justify-center p-8 border-b border-white/5 relative bg-surface-container-lowest/30
+							group
+							"
+							>
 								{/* hero for visual preview */}
+								<video
+									src={`${comp.imageUrl}#t=1`}
+									muted
+									playsInline
+									loop
+									preload="metadata"
+									className="w-full h-full object-cover"
+									onMouseEnter={(event) => {
+										event.currentTarget
+											.play()
+											.catch(() => undefined);
+										console.log("herer");
 
-								<Image
-									src={comp.imageUrl}
-									alt={comp.name}
-									fill
-									className={
-										"duration-700 ease-in-out transition-all ease-in blur-2xl"
-									}
-									placeholder="blur"
-									blurDataURL={blurhashToBase64(
-										comp.blurHash,
-									)}
-									onLoad={(e) => {
-										e.currentTarget.classList.remove(
-											"blur-2xl",
-											"scale-110",
-										);
+										event.currentTarget.playbackRate = 4;
 									}}
-								/>
+									onMouseLeave={(event) => {
+										event.currentTarget.pause();
+										event.currentTarget.currentTime = 2;
+										event.currentTarget.playbackRate = 1;
+									}}
+								>
+									{" "}
+								</video>
+								<span className="absolute top-[20%] right-[16%] opacity-50 group-hover:opacity-100 transition-all">
+									{" "}
+									<LucideClockFading />{" "}
+								</span>
 							</div>
 							<div className="p-8 flex flex-col gap-8 flex-grow">
 								<div>

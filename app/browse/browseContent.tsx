@@ -1,4 +1,3 @@
-import { Loader2 } from "lucide-react";
 import SearchFilters from "../component/BrowsePage/SearchFilters";
 
 import InbuiltElementsList from "../component/BrowsePage/InbuiltElements";
@@ -8,16 +7,16 @@ const MOCK_COMPONENTS = [
 		id: "209",
 		name: "Premium Text Field",
 		category: "Inputs",
-		imageUrl: "/images/text.gif",
+		imageUrl: "/images/video/text.webm",
 		description:
 			"An advanced text field with floating label, adornments, and error animations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
 	},
 	{
 		id: "211",
-		name: "Premium Morphing Button",
+		name: "Morphing Button",
 		category: "Buttons",
-		imageUrl: "/images/morphingbutton.gif",
+		imageUrl: "/images/video/morphingbutton.webm",
 		description:
 			"An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -26,7 +25,7 @@ const MOCK_COMPONENTS = [
 		id: "212",
 		name: "Skeleton Shimmer",
 		category: "Loading",
-		imageUrl: "/images/skeletonshimmer.gif",
+		imageUrl: "/images/video/skeletonshimmer.webm",
 		description:
 			"A sweeping animated gradient placeholder used to indicate content is loading.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -35,7 +34,7 @@ const MOCK_COMPONENTS = [
 		id: "213",
 		name: "Premium Switch",
 		category: "Toggles",
-		imageUrl: "/images/toggle.gif",
+		imageUrl: "/images/video/toggle.webm",
 		description:
 			"An animated premium switch with integrated icons for states like dark/light mode.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -44,7 +43,7 @@ const MOCK_COMPONENTS = [
 		id: "214",
 		name: "Premium Accordion",
 		category: "Data Display",
-		imageUrl: "/images/premiumaccordian.gif",
+		imageUrl: "/images/video/premiumaccordian.webm",
 		description:
 			"An animated, customizable accordion component that smoothly expands and collapses its content.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -53,7 +52,7 @@ const MOCK_COMPONENTS = [
 		id: "215",
 		name: "Segmented Control",
 		category: "Toggles",
-		imageUrl: "/images/segmenteddisplay.gif",
+		imageUrl: "/images/video/segmenteddisplay.webm",
 		description:
 			"An iOS-style segmented control that smoothly slides an active indicator between options.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -62,7 +61,7 @@ const MOCK_COMPONENTS = [
 		id: "216",
 		name: "Premium Animated Steps",
 		category: "Navigation",
-		imageUrl: "/images/progress.gif",
+		imageUrl: "/images/video/progress.webm",
 		description:
 			"An animated progress tracker supporting both horizontal and vertical orientations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -71,7 +70,7 @@ const MOCK_COMPONENTS = [
 		id: "217",
 		name: "Animated OTP Input",
 		category: "Inputs",
-		imageUrl: "/images/otp.gif",
+		imageUrl: "/images/video/otp.webm",
 		description:
 			"An animated OTP/PIN input field with dynamic focus borders and secure masking capabilities.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
