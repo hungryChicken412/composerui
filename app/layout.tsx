@@ -4,6 +4,7 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 
 import { ToastContainer } from "react-toastify";
+import FirebaseAnalytics from "./component/FirebaseAnalytics";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://composerui.com";
 const ORG_NAME = process.env.NEXT_PUBLIC_ORG_NAME || "ComposerUI";
@@ -90,6 +91,7 @@ export default function RootLayout({
 					content="width=device-width,initial-scale=1"
 				/>
 				<meta name="format-detection" content="telephone=no" />
+				
 
 				<script
 					type="application/ld+json"
@@ -122,6 +124,9 @@ export default function RootLayout({
 			</head>
 			<body className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 				<div className="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+					
+					
+					<FirebaseAnalytics/> 
 					<main className="flex-1">{children}</main>
 					<ToastContainer />
 					<NextTopLoader />
