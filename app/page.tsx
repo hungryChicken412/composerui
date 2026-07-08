@@ -94,7 +94,7 @@ export default function LandingPage() {
 								className="absolute inset-0 bg-primary/40 blur-xl rounded-lg transition-all duration-300 group-hover:bg-primary/60"
 								aria-hidden="true"
 							></div>
-							<Link href="/browse" className="relative bg-primary text-on-primary font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-primary-container hover:scale-105 transition-all duration-300 shadow-sm w-full sm:w-auto flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.6)] group">
+							<Link href="/browse" className="relative bg-primary cursor-pointer text-on-primary font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-primary-container hover:scale-105 transition-all duration-300 shadow-sm w-full sm:w-auto flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.6)] group">
 								Explore Components
 								<ArrowRight
 									size={18}
