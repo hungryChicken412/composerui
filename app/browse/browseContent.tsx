@@ -7,7 +7,8 @@ const MOCK_COMPONENTS = [
 		id: "209",
 		name: "Premium Text Field",
 		category: "Inputs",
-		imageUrl: "/images/video/text.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505296/text_rnxffj.webm",
 		description:
 			"An advanced text field with floating label, adornments, and error animations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -16,7 +17,8 @@ const MOCK_COMPONENTS = [
 		id: "211",
 		name: "Morphing Button",
 		category: "Buttons",
-		imageUrl: "/images/video/morphingbutton.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505295/morphingbutton_mnezly.webm",
 		description:
 			"An animated button that morphs its shape, color, and content across Idle, Loading, and Success states.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -25,7 +27,8 @@ const MOCK_COMPONENTS = [
 		id: "212",
 		name: "Skeleton Shimmer",
 		category: "Loading",
-		imageUrl: "/images/video/skeletonshimmer.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505296/skeletonshimmer_pqwuxm.webm",
 		description:
 			"A sweeping animated gradient placeholder used to indicate content is loading.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -34,7 +37,8 @@ const MOCK_COMPONENTS = [
 		id: "213",
 		name: "Premium Switch",
 		category: "Toggles",
-		imageUrl: "/images/video/toggle.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505297/toggle_qgu6zg.webm",
 		description:
 			"An animated premium switch with integrated icons for states like dark/light mode.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -43,7 +47,8 @@ const MOCK_COMPONENTS = [
 		id: "214",
 		name: "Premium Accordion",
 		category: "Data Display",
-		imageUrl: "/images/video/premiumaccordian.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505295/premiumaccordian_ucy5zq.webm",
 		description:
 			"An animated, customizable accordion component that smoothly expands and collapses its content.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -52,7 +57,8 @@ const MOCK_COMPONENTS = [
 		id: "215",
 		name: "Segmented Control",
 		category: "Toggles",
-		imageUrl: "/images/video/segmenteddisplay.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505297/segmenteddisplay_pijtym.webm",
 		description:
 			"An iOS-style segmented control that smoothly slides an active indicator between options.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -61,7 +67,8 @@ const MOCK_COMPONENTS = [
 		id: "216",
 		name: "Premium Animated Steps",
 		category: "Navigation",
-		imageUrl: "/images/video/progress.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505295/progress_v6vlz7.webm",
 		description:
 			"An animated progress tracker supporting both horizontal and vertical orientations.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
@@ -70,7 +77,8 @@ const MOCK_COMPONENTS = [
 		id: "217",
 		name: "Animated OTP Input",
 		category: "Inputs",
-		imageUrl: "/images/video/otp.webm",
+		imageUrl:
+			"https://res.cloudinary.com/asi9l8oy/video/upload/v1783505296/otp_kobirx.webm",
 		description:
 			"An animated OTP/PIN input field with dynamic focus borders and secure masking capabilities.",
 		blurHash: "LEHLk~WB2yk8pyo0adR*.7kCMdnj",
