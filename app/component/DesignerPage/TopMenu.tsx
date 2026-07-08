@@ -69,7 +69,7 @@ function TopMenu() {
 					>
 						<Image
 							src="/logo-03.cc5e5332.svg"
-							alt="github"
+							alt="githubLink"
 							style={{
 								filter: "invert()",
 							}}
