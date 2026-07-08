@@ -7,6 +7,7 @@ import { SlidersHorizontal } from "lucide-react";
 import dynamic from "next/dynamic";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
+import Link from "next/link";
 
 const Mobile = dynamic(() => import("./component/DesignerPage/mobile"), {
 	ssr: true, // Prevents server-side rendering for this heavy client component
@@ -93,14 +94,14 @@ export default function LandingPage() {
 								className="absolute inset-0 bg-primary/40 blur-xl rounded-lg transition-all duration-300 group-hover:bg-primary/60"
 								aria-hidden="true"
 							></div>
-							<button className="relative bg-primary text-on-primary font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-primary-container hover:scale-105 transition-all duration-300 shadow-sm w-full sm:w-auto flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.6)] group">
+							<Link href="/browse" className="relative bg-primary text-on-primary font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-primary-container hover:scale-105 transition-all duration-300 shadow-sm w-full sm:w-auto flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.6)] group">
 								Explore Components
 								<ArrowRight
 									size={18}
 									className="group-hover:translate-x-1 transition-transform"
 									aria-hidden="true"
 								/>
-							</button>
+							</Link>
 						</div>
 						<button className="bg-surface-container/60 backdrop-blur-md border border-outline-variant/50 text-on-surface font-body-md text-body-md px-6 py-3 rounded-lg hover:bg-surface-container-high transition-colors w-full sm:w-auto">
 							View Documentation
