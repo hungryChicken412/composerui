@@ -21,7 +21,7 @@ export default function Navbar() {
 		<>
 			<header className="bg-surface/40 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-2xl shadow-black/40">
 				<div className=" mx-auto px-lg flex justify-between items-center h-20">
-					<div className="flex items-center gap-sm">
+					<Link href="/" className="flex items-center gap-sm">
 						<img
 							alt="Compose UI Logo"
 							className="h-8 w-8 object-contain rounded"
@@ -30,7 +30,7 @@ export default function Navbar() {
 						<span className="font-display-lg text-headline-sm font-bold tracking-tight text-on-surface">
 							ComposerUI
 						</span>
-					</div>
+					</Link>
 					<nav className="hidden md:flex items-center gap-2xl">
 						{navLinks.map((link) => (
 							<Link
