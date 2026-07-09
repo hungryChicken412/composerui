@@ -1,36 +1,37 @@
 "use client"; // This tells Next.js to only run this on the browser
 
 import { useEffect } from "react";
-import { initializeApp, getApps } from "firebase/app";
-import { getAnalytics, isSupported } from "firebase/analytics";
 
+// Declare global window properties for gtag
+declare global {
+	interface Window {
+		dataLayer: any[];
+	}
+}
 export default function FirebaseAnalytics() {
 	useEffect(() => {
-		// 1. Paste your config object here
+		const measurementId = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID;
 
-		const firebaseConfig = {
-			apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-			authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-			projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-			storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-			messagingSenderId:
-				process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-			appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-			measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-		};
+		if (!measurementId) {
+			console.warn("Measurement ID not configured");
+			return;
+		}
 
-		// 2. Prevent Next.js hot-reloads from initializing Firebase multiple times
-		const app =
-			getApps().length === 0
-				? initializeApp(firebaseConfig)
-				: getApps()[0];
+		// Inject gtag script directly to bypass any GTM interference
+		const script = document.createElement("script");
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+		script.async = true;
+		document.head.appendChild(script);
 
-		// 3. Initialize Analytics only if the browser supports it
-		isSupported().then((supported) => {
-			if (supported) {
-				getAnalytics(app);
-			}
-		});
+		// Initialize gtag after script loads
+		window.dataLayer = window.dataLayer || [];
+		function gtag(...args : any[]) {
+			window.dataLayer.push(args);
+		}
+		gtag("js", new Date());
+		gtag("config", measurementId);
+
+		console.log("GA4 initialized with measurement ID:", measurementId);
 	}, []);
 
 	return null; // This component doesn't render anything visually
